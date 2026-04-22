@@ -1,11 +1,13 @@
 import Image from "next/image";
 
 import Navigation from "@/components/navigation";
+import Logo_nav from "@/components/logo_nav";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="w-screen flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black ">
+      <Logo_nav />
+      <main className="w-full flex flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start min-h-screen">
         {/* <CursorBackground /> */}
         <Navigation />
         {/* Ngwako iam here */}
@@ -31,25 +33,20 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <a
                 href="tel:+1800CORE"
-                className="px-8 py-4 rounded-full bg-blue-600 text-white font-semibold transition-all hover:bg-blue-700 hover:scale-105 active:scale-95 text-center min-w-[200px] shadow-lg shadow-blue-600/20"
+                className="px-8 py-4 rounded-full bg-blue-600 text-white font-semibold transition-all hover:bg-blue-700 hover:scale-105 active:scale-95 text-center min-w-50 shadow-lg shadow-blue-600/20"
               >
                 Dial +1 800-CORE
               </a>
 
               <a
                 href="mailto:hello@studio.io"
-                className="px-8 py-4 rounded-full border border-blue-200 bg-white/50 backdrop-blur-sm text-blue-600 font-semibold transition-all hover:bg-white hover:scale-105 active:scale-95 text-center min-w-[200px]"
+                className="px-8 py-4 rounded-full border border-blue-200 bg-white/50 backdrop-blur-sm text-blue-600 font-semibold transition-all hover:bg-white hover:scale-105 active:scale-95 text-center min-w-50"
               >
                 Email hello@studio.io
               </a>
             </div>
           </div>
         </section>
-
-        {/* Footer-ish spacer */}
-        <footer className="py-12 border-t border-slate-100 w-full flex justify-center opacity-30 text-[10px] uppercase tracking-[0.4em] text-slate-900">
-          © 2026 Nexus Connect Global / All Rights Reserved
-        </footer>
       </main>
     </div>
   );
