@@ -8,7 +8,7 @@ export default function Home() {
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
         {/* <CursorBackground /> */}
         <Navigation />
-
+        {/* Ngwako iam here */}
         {/* Hero Section */}
         <section className="flex-1 flex flex-col items-center justify-center pt-32 pb-20 px-6 w-full max-w-7xl mx-auto">
           <div className="relative z-10 w-full max-w-5xl bg-white/40 backdrop-blur-[20px] border border-blue-100 rounded-[32px] p-12 md:p-16 shadow-xl shadow-blue-500/5">
