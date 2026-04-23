@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { act, useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -40,17 +40,34 @@ export default function Intromainpage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  const [items, setItems] = useState(IMAGES);
+
+  //   const moveNext = () => {
+  //     setActiveIndex((prev) => (prev + 1) % IMAGES.length);
+  //   };
+
+  //   const movePrev = () => {
+  //     setActiveIndex((prev) => (prev - 1 + IMAGES.length) % IMAGES.length);
+  //   };
+
   const moveNext = () => {
-    setActiveIndex((prev) => (prev + 1) % IMAGES.length);
+    setItems((prev) => {
+      const [first, ...rest] = prev;
+      return [...rest, first];
+    });
   };
 
   const movePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + IMAGES.length) % IMAGES.length);
+    setItems((prev) => {
+      const last = prev[prev.length - 1];
+      const rest = prev.slice(0, -1);
+      return [last, ...rest];
+    });
   };
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-    const interval = setInterval(moveNext, 5000);
+    const interval = setInterval(moveNext, 10000);
     return () => clearInterval(interval);
   }, [isAutoPlaying, activeIndex]);
 
@@ -112,7 +129,7 @@ export default function Intromainpage() {
             <div className="relative h-160 w-full grow flex items-center justify-center">
               <div className="flex h-100 md:h-154 w-full gap-2.5 items-stretch">
                 <AnimatePresence mode="popLayout" initial={false}>
-                  {IMAGES.map((item, index) => {
+                  {items.map((item, index) => {
                     const isActive = index === 0;
                     return (
                       <motion.div
@@ -236,7 +253,9 @@ export default function Intromainpage() {
                 </div>
 
                 <button
-                  onClick={moveNext}
+                  onClick={() => {
+                    moveNext();
+                  }}
                   className="p-3 rounded-full border border-[#E5DFD6] hover:bg-white transition-colors group"
                   aria-label="Next image"
                 >
