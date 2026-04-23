@@ -14,7 +14,7 @@ const navItems = [
 export default function Navigation() {
   const pathname = usePathname();
   return (
-    <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
+    <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50">
       <div className="flex items-center gap-1 p-1 bg-white/60 backdrop-blur-xl border border-blue-100 rounded-full h-12 shadow-lg shadow-blue-500/5">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
