@@ -37,29 +37,22 @@ const IMAGES = [
 ];
 
 export default function Intromainpage() {
-  const [items, setItems] = useState(IMAGES);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   const moveNext = () => {
-    setItems((prev) => {
-      const [first, ...rest] = prev;
-      return [...rest, first];
-    });
+    setActiveIndex((prev) => (prev + 1) % IMAGES.length);
   };
 
   const movePrev = () => {
-    setItems((prev) => {
-      const last = prev[prev.length - 1];
-      const rest = prev.slice(0, -1);
-      return [last, ...rest];
-    });
+    setActiveIndex((prev) => (prev - 1 + IMAGES.length) % IMAGES.length);
   };
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-    const interval = setInterval(moveNext, 4000);
+    const interval = setInterval(moveNext, 5000);
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, activeIndex]);
 
   return (
     <main className="w-full flex flex-col justify-start bg-white dark:bg-black sm:items-start min-h-screen ">
@@ -67,8 +60,8 @@ export default function Intromainpage() {
 
       {/* Ngwako iam here */}
       {/* Hero Section */}
-      <section className="bg-red-500 w-full flex flex-col md:flex-row md:justify-center items-center justify-between md:gap-5   dark:bg-slate-800 sm:items-start py-10">
-        <div className="flex flex-col items-center justify-center pt-32 pb-20  max-w-200 h-160">
+      <section className="bg-white w-full flex flex-col md:flex-row md:justify-center items-center justify-between md:gap-5   dark:bg-slate-800 sm:items-start py-10">
+        <div className="flex flex-col items-center justify-center max-w-200 max-h-160">
           <div className="relative z-10 max-w-200 h-160 bg-white/40 backdrop-blur-[20px] border border-blue-100 rounded-[32px] p-12 md:p-16 shadow-xl shadow-blue-500/5">
             <h1 className="text-[12px] font-sans uppercase tracking-[3px] text-blue-600/60 mb-6">
               GovLead is a Strategic Growth Firm
@@ -112,13 +105,14 @@ export default function Intromainpage() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center pt-32 pb-20 w-140 max-h-160">
-          <div className="relative z-10 w-140 h-160 bg-white/40 backdrop-blur-[20px] border border-blue-100 rounded-[32px] p-2   shadow-xl shadow-blue-500/5">
+
+        <div className="flex flex-col items-center justify-center   w-140 ">
+          <div className="relative z-10 w-140 h-160 px-2 bg-white/40 backdrop-blur-[20px] border border-blue-100 rounded-[32px]   shadow-xl shadow-blue-500/5">
             {/* Slider Container */}
-            <div className="relative w-full max-w-6xl grow flex items-center justify-center">
-              <div className="flex h-100 md:h-130 w-full gap-2.5 items-stretch">
+            <div className="relative h-160 w-full grow flex items-center justify-center">
+              <div className="flex h-100 md:h-154 w-full gap-2.5 items-stretch">
                 <AnimatePresence mode="popLayout" initial={false}>
-                  {items.map((item, index) => {
+                  {IMAGES.map((item, index) => {
                     const isActive = index === 0;
                     return (
                       <motion.div
@@ -219,7 +213,7 @@ export default function Intromainpage() {
               </div>
 
               {/* Controls */}
-              <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-6">
+              {/* <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-6">
                 <button
                   onClick={movePrev}
                   className="p-3 rounded-full border border-[#E5DFD6] hover:bg-white transition-colors group"
@@ -233,7 +227,7 @@ export default function Intromainpage() {
                     <div
                       key={i}
                       className={`h-0.5 transition-all duration-500 rounded-full ${
-                        items[0].id === IMAGES[i].id
+                        IMAGES[0].id === IMAGES[i].id
                           ? "w-8 bg-[#3D3A35]"
                           : "w-2 bg-[#E5DFD6]"
                       }`}
@@ -248,7 +242,7 @@ export default function Intromainpage() {
                 >
                   <ChevronRight className="w-4 h-4 text-[#8C8479] group-hover:text-[#3D3A35] transition-colors" />
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
