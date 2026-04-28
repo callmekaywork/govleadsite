@@ -72,25 +72,24 @@ export default function Intromainpage() {
   }, [isAutoPlaying, activeIndex]);
 
   return (
-    <main className="w-full flex flex-col justify-start bg-white dark:bg-black sm:items-start min-h-screen ">
+    <main className="w-full flex flex-col justify-start bg-zinc-50 dark:bg-black sm:items-start ">
       {/* <CursorBackground /> */}
 
-      {/* Ngwako iam here */}
       {/* Hero Section */}
-      <section className="bg-white w-full flex flex-col md:flex-row md:justify-center items-center justify-between md:gap-5   dark:bg-slate-800 sm:items-start py-10">
+      <section className="bg-zinc-50 w-full flex flex-col md:flex-row md:justify-center items-center justify-between md:gap-5   dark:bg-slate-800 sm:items-start py-10 ">
         <div className="flex flex-col items-center justify-center max-w-200 max-h-160">
-          <div className="relative z-10 max-w-200 h-160 bg-white/40 backdrop-blur-[20px] border border-blue-100 rounded-[32px] p-12 md:p-16 shadow-xl shadow-blue-500/5">
-            <h1 className="text-[12px] font-sans uppercase tracking-[3px] text-blue-600/60 mb-6">
+          <div className="relative z-10 max-w-200 h-160 bg-white/40 dark:bg-slate-900 backdrop-blur-[20px]  border-2 dark:border-slate-900 rounded-[32px] p-12 md:p-16 border-black shadow-[6px_6px_0px_#000] ">
+            <h1 className="text-[12px] font-sans uppercase tracking-[3px] dark:text-white/70 text-blue-600/60 mb-6">
               GovLead is a Strategic Growth Firm
             </h1>
 
-            <h2 className="text-5xl md:text-[56px] font-sans font-bold tracking-[-1px] text-slate-900 mb-6 leading-[1.1]">
+            <h2 className="text-5xl md:text-[56px] font-sans font-bold tracking-[-1px] text-slate-900 dark:text-white mb-6 leading-[1.1]">
               Create Impact That <br />
               <span className="text-blue-600">Resonates.</span>
             </h2>
 
-            <p className="text-lg text-slate-600 mb-10 max-w-xl leading-relaxed">
-              <span className="text-lg text-blue-600 font-bold mb-10 max-w-xl leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-white/80 mb-10 max-w-xl leading-relaxed">
+              <span className="text-lg text-blue-600 dark:text-blue-300 font-bold mb-10 max-w-xl leading-relaxed">
                 GovLead is a Strategic Growth Firm
               </span>{" "}
               that helps founders, startups, and scaling businesses clarify
@@ -98,9 +97,9 @@ export default function Intromainpage() {
               turn strategy into sustainable income.
             </p>
 
-            <p className="text-lg text-slate-600 mb-10 max-w-xl leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-white/80 mb-10 max-w-xl leading-relaxed">
               We work at the{" "}
-              <span className="text-lg text-blue-600 font-bold mb-10 max-w-xl leading-relaxed">
+              <span className="text-lg text-blue-600 dark:text-blue-300 font-bold mb-10 max-w-xl leading-relaxed">
                 intersection of strategy
               </span>
               , systems, and digital execution — helping businesses grow with
@@ -123,7 +122,7 @@ export default function Intromainpage() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center   w-140 ">
+        <div className="hidden md:flex flex-col items-center justify-center w-140 border-black shadow-[6px_6px_0px_#000] rounded-2xl">
           <div className="relative z-10 w-140 h-160 px-2 bg-white/40 backdrop-blur-[20px] border border-blue-100 rounded-[32px]   shadow-xl shadow-blue-500/5">
             {/* Slider Container */}
             <div className="relative h-160 w-full grow flex items-center justify-center">
@@ -267,7 +266,7 @@ export default function Intromainpage() {
         </div>
       </section>
 
-      <section className="bg-blue-500 w-full flex flex-col md:flex-row md:justify-center items-center justify-between md:gap-5   dark:bg-slate-800 sm:items-start h-100"></section>
+      <section className="hidden bg-blue-500 w-full  flex-col md:flex-row md:justify-center items-center justify-between md:gap-5   dark:bg-slate-800 sm:items-start h-100"></section>
     </main>
   );
 }

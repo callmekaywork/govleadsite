@@ -10,8 +10,8 @@ export default function Logo_nav() {
   const { theme } = useTheme();
 
   return (
-    <div className="w-full bg-white/60 dark:bg-black">
-      <div className="w-full flex items-center justify-between px-20">
+    <div className="w-full h-30 bg-white/60 dark:bg-slate-950">
+      <div className="w-full h-full flex items-center justify-between px-20">
         <h1 className="h-20 w-60 text-4xl flex justify-center items-center">
           <Image
             src={
@@ -23,7 +23,7 @@ export default function Logo_nav() {
           />
         </h1>
 
-        <div className="h-20 w-20 flex justify-center items-center ">
+        <div className="h-full w-20 flex justify-center items-center ">
           <DarkModeToggle />
         </div>
       </div>
