@@ -7,15 +7,16 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 const navItems = [
-  { name: "Connect", path: "/" },
+  { name: "Welcome", path: "/" },
   { name: "Explore", path: "/explore" },
+  { name: "Our Team", path: "/our_team" },
 ];
 
 export default function Navigation() {
   const pathname = usePathname();
   return (
     <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-center gap-1 p-1 bg-white/60 backdrop-blur-xl border border-blue-100 rounded-full h-12 shadow-lg shadow-blue-500/5">
+      <div className="flex items-center gap-1 p-1 bg-white/60 dark:bg-slate-800 backdrop-blur-xl border border-blue-100 dark:border-slate-900 rounded-full h-12 shadow-lg shadow-blue-500/5 dark:shadow-blue-200/5">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (
