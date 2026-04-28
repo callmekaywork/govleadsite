@@ -36,7 +36,7 @@ const IMAGES = [
   },
 ];
 
-export default function Intromainpage() {
+export default function Homepage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
@@ -76,9 +76,9 @@ export default function Intromainpage() {
       {/* <CursorBackground /> */}
 
       {/* Hero Section */}
-      <section className="bg-zinc-50 w-full flex flex-col md:flex-row md:justify-center items-center justify-between md:gap-5   dark:bg-slate-800 sm:items-start py-10 ">
-        <div className="flex flex-col items-center justify-center max-w-200 max-h-160">
-          <div className="relative z-10 max-w-200 h-160 bg-white/40 dark:bg-slate-900 backdrop-blur-[20px]  border-2 dark:border-slate-900 rounded-[32px] p-12 md:p-16 border-black shadow-[6px_6px_0px_#000] ">
+      <section className="bg-zinc-50 w-full flex flex-col md:flex-row md:justify-center items-center justify-between md:gap-5 dark:bg-slate-800 sm:items-start py-5 ">
+        <div className="flex items-center justify-center w-full h-auto md:px-20 px-2">
+          <div className="relative z-10 w-full dark:bg-slate-900 backdrop-blur-[20px] bg-white/40 border-2 dark:border-slate-900 rounded-[32px] p-12 md:p-16 border-black shadow-[6px_6px_0px_#000] ">
             <h1 className="text-[12px] font-sans uppercase tracking-[3px] dark:text-white/70 text-blue-600/60 mb-6">
               GovLead is a Strategic Growth Firm
             </h1>
@@ -122,7 +122,7 @@ export default function Intromainpage() {
           </div>
         </div>
 
-        <div className="hidden md:flex flex-col items-center justify-center w-140 border-black shadow-[6px_6px_0px_#000] rounded-2xl">
+        <div className="hidden md:hidden flex-col items-center justify-center w-140 border-black shadow-[6px_6px_0px_#000] rounded-2xl">
           <div className="relative z-10 w-140 h-160 px-2 bg-white/40 backdrop-blur-[20px] border border-blue-100 rounded-[32px]   shadow-xl shadow-blue-500/5">
             {/* Slider Container */}
             <div className="relative h-160 w-full grow flex items-center justify-center">

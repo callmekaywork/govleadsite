@@ -15,8 +15,8 @@ const navItems = [
 export default function Navigation() {
   const pathname = usePathname();
   return (
-    <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50">
-      <div className="flex items-center gap-1 p-1 bg-white/60 dark:bg-slate-800 backdrop-blur-xl border border-blue-100 dark:border-slate-900 rounded-full h-12 shadow-lg shadow-blue-500/5 dark:shadow-blue-200/5">
+    <nav className="fixed top-10 left-1/2 -translate-x-1/2 z-50 hidden md:block">
+      <div className="w-auto flex items-center gap-1 p-1 bg-white/60 dark:bg-slate-800 backdrop-blur-xl border border-blue-100 dark:border-slate-900 rounded-full h-12 shadow-lg shadow-blue-500/5 dark:shadow-blue-200/5">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (
@@ -24,7 +24,7 @@ export default function Navigation() {
               key={item.path}
               href={item.path}
               className={cn(
-                "relative px-6 py-2 text-sm font-medium transition-colors rounded-full",
+                "relative px-2 py-2 flex justify-center text-[10px] md:text-sm font-medium transition-colors rounded-full max-w-30 w-20 md:w-40",
                 isActive
                   ? "text-blue-600"
                   : "text-slate-400 hover:text-blue-600",

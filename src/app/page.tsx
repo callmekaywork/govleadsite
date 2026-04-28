@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import Navigation from "@/components/navigation";
 import Logo_nav from "@/components/logo_nav";
-import Intromainpage from "@/components/Intromainpage";
 import { Sliding_govlead_roles } from "@/components/slidinggovlead_roles";
 import Strategiclens from "@/components/strategiclens";
 import { WhatWeDo } from "@/components/whatwedo";
@@ -16,6 +15,7 @@ import { AboutDiff } from "@/components/aboutdiffs";
 import { IdealClient } from "@/components/idealclient";
 import { GovLeadPromise } from "@/components/govleadpromise";
 import { Footer } from "@/components/footer";
+import Homepage from "@/components/homepage";
 
 export default function Home() {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
@@ -45,8 +45,10 @@ export default function Home() {
   return (
     <div className="w-full flex flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 ">
       <Logo_nav />
+
       <Navigation />
-      <Intromainpage />
+
+      <Homepage />
       <Sliding_govlead_roles />
       <Strategiclens />
 

@@ -64,7 +64,7 @@ export function Sliding_govlead_roles() {
 
   return (
     <div
-      className="w-full flex flex-col items-center py-20 px-4 dark:bg-slate-800"
+      className="w-full flex flex-col bg-zinc-50 items-center py-20 px-4 dark:bg-slate-800 overflow-hidden"
       ref={containerRef}
     >
       <div className="w-full max-w-4xl relative">
