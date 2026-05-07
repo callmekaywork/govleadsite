@@ -94,7 +94,7 @@ export default function Page() {
   //   console.log("Form submitted:", data);
   //   console.log("\n", form);
   // };
-  // const progress = (step / 4) * 100;
+  const progress = (step / 4) * 100;
 
   const {
     register,
@@ -169,7 +169,7 @@ export default function Page() {
     setIsSubmitted(true);
     reset();
   };
-  const progress = (step / 4) * 100;
+  // const progress = (step / 4) * 100;
 
   return (
     <main className="min-h-screen bg-slate-50 font-sans selection:bg-indigo-100 pb-24">
@@ -209,7 +209,7 @@ export default function Page() {
             <motion.div
               className="h-full bg-indigo-600"
               initial={{ width: 0 }}
-              animate={{ width: `${onprogress}%` }}
+              animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5 }}
             />
           </div>
