@@ -24,7 +24,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { orpc } from "@/orpc/client";
 import { toast } from "sonner";
 
-export default function ConsultationPage() {
+export default function Page() {
   // const { addConsultation } = useExploreData();
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
