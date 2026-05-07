@@ -21,7 +21,7 @@ import Navigation from "@/components/navigation";
 import { orpc } from "@/orpc/client";
 import { toast } from "sonner";
 
-export default function ExplorePage() {
+export default function Page() {
   const { addLead } = useExploreData();
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
