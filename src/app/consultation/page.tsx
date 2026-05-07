@@ -17,7 +17,7 @@ import {
   Clock,
   ChevronRight,
 } from "lucide-react";
-import { useExploreData, Consultation } from "@/lib/explore-store";
+// import { useExploreData, Consultation } from "@/lib/explore-store";
 import Logo_nav from "@/components/logo_nav";
 import Navigation from "@/components/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -25,14 +25,14 @@ import { orpc } from "@/orpc/client";
 import { toast } from "sonner";
 
 export default function ConsultationPage() {
-  const { addConsultation } = useExploreData();
+  // const { addConsultation } = useExploreData();
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [form, setForm] = useState<Partial<Consultation>>({
-    contactMethod: "Email",
-    hasBusiness: true,
-    implementationReady: "Possibly",
-  });
+  // const [form, setForm] = useState<Partial<Consultation>>({
+  //   contactMethod: "Email",
+  //   hasBusiness: true,
+  //   implementationReady: "Possibly",
+  // });
 
   type ConsultFormType = {
     name: string;
