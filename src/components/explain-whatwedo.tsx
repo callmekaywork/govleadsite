@@ -95,7 +95,7 @@ export function Explainwhatwedo({
   return (
     <div
       ref={containerRef}
-      className="w-full min-h-screen bg-slate-100 dark:bg-slate-700 flex flex-col items-center justify-center p-4 md:p-12 relative"
+      className="w-full min-h-screen bg-background flex flex-col items-center justify-center p-4 md:p-12 relative"
     >
       <AnimatePresence mode="wait">
         {isLoading ? (

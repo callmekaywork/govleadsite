@@ -71,17 +71,17 @@ const PILLARS = [
 
 export function ServicePillars() {
   return (
-    <section className="w-full py-32 px-4 bg-transparent relative">
+    <section className="w-full py-32 px-4 bg-background relative">
       <div className="max-w-6xl mx-auto">
         <div className="mb-20 space-y-6">
-          <div className="inline-block px-6 py-2 bg-black text-white font-mono text-xs uppercase tracking-widest border-2 border-white shadow-[4px_4px_0px_#000] rounded-full">
+          <div className="inline-block px-6 py-2 bg-brand-accent text-default-text font-mono text-xs uppercase tracking-widest border-2 border-brand-accent shadow-[4px_4px_0px_#000] rounded-full">
             The Delivery Model
           </div>
-          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter text-black uppercase leading-none">
+          <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter text-default-text uppercase leading-none">
             Core Service <br />
-            <span className="text-blue-500">Pillars</span>
+            <span className="text-brand-text">Pillars</span>
           </h2>
-          <p className="max-w-2xl text-black font-bold text-xl leading-snug">
+          <p className="max-w-2xl text-accent-text font-bold text-xl leading-snug">
             GovLead’s work is delivered through four tightly integrated pillars
             designed to move businesses from friction to flow.
           </p>
@@ -96,7 +96,7 @@ export function ServicePillars() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={cn(
-                "group relative bg-white border-4 border-black p-8 md:p-12 shadow-[6px_6px_0px_#000] rounded-[3rem] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5",
+                "group relative bg-brand-card-bg border-4 border-black p-8 md:p-12 shadow-[6px_6px_0px_#000] rounded-[3rem] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5",
               )}
             >
               <div className="flex flex-col lg:flex-row gap-12 items-start">
@@ -117,20 +117,20 @@ export function ServicePillars() {
 
                 {/* CONTENT */}
                 <div className="flex-grow space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-sans font-black text-black uppercase tracking-tighter leading-none">
+                  <h3 className="text-3xl md:text-4xl font-sans font-black text-default-text uppercase tracking-tighter leading-none">
                     {pillar.title}
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-4">
-                      <p className="text-black font-bold text-lg leading-tight italic">
+                      <p className="text-default-text-text font-bold text-lg leading-tight italic">
                         We help businesses clarify:
                       </p>
                       <ul className="space-y-3">
                         {pillar.details.map((item, i) => (
                           <li
                             key={i}
-                            className="flex items-center gap-3 text-sm font-black uppercase tracking-widest text-black/60 border-b-2 border-black/5 pb-2"
+                            className="flex items-center gap-3 text-sm font-black uppercase tracking-widest text-accent-text border-b-2 border-black/5 pb-2"
                           >
                             <div className="w-2 h-2 bg-black rounded-full" />
                             {item}
@@ -145,10 +145,10 @@ export function ServicePillars() {
                         <span className="inline-block px-3 py-1 bg-black text-white font-mono text-[10px] uppercase font-bold rounded-lg mb-2">
                           The &quot;Why&quot;
                         </span>
-                        <p className="text-black font-black text-lg leading-tight uppercase tracking-tight">
+                        <p className="text-default-text font-black text-lg leading-tight uppercase tracking-tight">
                           {pillar.meaning}
                         </p>
-                        <p className="text-zinc-500 text-sm font-medium">
+                        <p className="text-accent-text text-sm font-medium">
                           {pillar.summary}
                         </p>
                       </div>

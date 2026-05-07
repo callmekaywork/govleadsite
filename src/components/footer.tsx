@@ -22,13 +22,21 @@ export function Footer() {
 
   const footerLinks = {
     Solutions: [
-      "Process Design",
-      "Scale Architecture",
-      "Digital Infrastructure",
-      "Revenue Strategy",
+      { name: "Process Design", link: "process-design" },
+      { name: "Digital Infrastructure", link: "digital-infrastructure" },
+      { name: "Revenue Strategy", link: "revenue-strategy" },
+      { name: "Scale Architecture", link: "scale-architecture" },
     ],
-    Company: ["Methodology", "The Promise", "Case Studies", "Insights"],
-    Legal: ["Privacy Protocol", "Terms of Service", "Security Standards"],
+    Company: [
+      { name: "Methodology", link: "methodology" },
+      // "Methodology", "The Promise", "Case Studies", "Insights"
+    ],
+    Legal: [
+      { name: "Privacy Protocol", link: "privacy-protocol" },
+      // "Privacy Protocol",
+      // "Terms of Service",
+      // "Security Standards",
+    ],
   };
 
   const scrollToTop = () => {
@@ -153,14 +161,15 @@ export function Footer() {
               <p className="text-white font-mono text-[10px] uppercase font-black tracking-[0.2em]">
                 {category}
               </p>
+
               <ul className="space-y-2">
-                {links.map((link) => (
-                  <li key={link}>
+                {links.map((link, idx) => (
+                  <li key={idx}>
                     <a
-                      href="#"
+                      href={`${category.toLowerCase()}/${link.link}`}
                       className="text-zinc-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-tight flex items-center gap-1 group"
                     >
-                      {link}
+                      {link.name}
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>

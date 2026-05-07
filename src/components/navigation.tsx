@@ -9,7 +9,8 @@ import React from "react";
 const navItems = [
   { name: "Welcome", path: "/" },
   { name: "Explore", path: "/explore" },
-  { name: "Our Team", path: "/our_team" },
+  { name: "Consultation", path: "/consultation" },
+  { name: "Our Team", path: "/team" },
 ];
 
 export default function Navigation() {

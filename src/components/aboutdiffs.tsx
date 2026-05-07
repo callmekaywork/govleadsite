@@ -34,23 +34,23 @@ const DIFFS = [
 
 export function AboutDiff() {
   return (
-    <section className="w-full py-32 px-4 rounded-[3rem] relative overflow-hidden">
+    <section className="w-full bg-background py-32 px-4 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-size-[4rem_4rem]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#2e3_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-size-[4rem_4rem]" />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 bg-background">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           <div className="lg:w-1/2 space-y-8">
-            <div className="inline-block px-6 py-2 bg-white text-black font-mono text-xs uppercase tracking-widest border-2 border-white shadow-[2px_2px_0px_#525252] rounded-full font-black ">
+            <div className="inline-block px-6 py-2 bg-brand-bacground text-default-text font-mono text-xs uppercase tracking-widest border-2 border-brand-accent shadow-[2px_2px_0px_#525252] rounded-full font-black ">
               The GovLead Edge
             </div>
             <h2 className="text-5xl md:text-7xl font-sans font-black tracking-tighter text-black dark:text-white uppercase leading-none">
               How we are <br />
-              <span className="text-blue-400">Different</span>
+              <span className="text-brand-accent">Different</span>
             </h2>
             <div className="space-y-4">
-              <p className="text-zinc-400 font-bold text-lg leading-tight uppercase">
+              <p className="text-accent-text font-bold text-lg leading-tight uppercase">
                 GovLead is not:
               </p>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -70,7 +70,6 @@ export function AboutDiff() {
               </ul>
             </div>
           </div>
-
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
             {DIFFS.map((diff, index) => (
               <motion.div
@@ -79,7 +78,7 @@ export function AboutDiff() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-blue-700/70 p-8 border-4 border-blue-800 shadow-[4px_4px_0px_#000] rounded-[2rem] space-y-4 group hover:-translate-y-1 transition-all"
+                className="bg-brand-card-bg p-8 border-4 border-brand-card-bg shadow-[4px_4px_0px_#000] rounded-[2rem] space-y-4 group hover:-translate-y-1 transition-all"
               >
                 <div
                   className={cn(
@@ -89,7 +88,7 @@ export function AboutDiff() {
                 >
                   <diff.icon className="w-6 h-6 text-black" />
                 </div>
-                <h3 className="text-xl font-black text-white uppercase tracking-tight">
+                <h3 className="text-xl font-black text-default-text uppercase tracking-tight">
                   {diff.title}
                 </h3>
                 <p className="text-zinc-400 text-sm font-medium leading-tight">

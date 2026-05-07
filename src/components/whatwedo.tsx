@@ -61,7 +61,7 @@ export function WhatWeDo({
   onSelectService: (id: string) => void;
 }) {
   return (
-    <section className="w-full py-32 px-4 bg-transparent overflow-hidden relative">
+    <section className="w-full py-32 px-4 bg-background overflow-hidden relative">
       {/* Interaction Tip */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}

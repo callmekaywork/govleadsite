@@ -43,7 +43,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-slate-800 ">
+    <div className="w-full flex flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-slate-900 ">
       <Logo_nav />
 
       <Navigation />
@@ -80,7 +80,7 @@ export default function Home() {
       <IdealClient />
       <GovLeadPromise />
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

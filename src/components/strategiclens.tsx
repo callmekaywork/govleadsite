@@ -34,11 +34,11 @@ const STEPS = [
 
 export default function Strategiclens() {
   return (
-    <section className="w-full py-32 px-4 dark:bg-slate-800 border-y dark:border-slate-800">
+    <section className="w-full py-32 px-4 bg-background ">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-7xl font-sans font-black tracking-tight text-black leading-none uppercase dark:text-white">
+            <h1 className="text-5xl md:text-7xl font-sans font-black tracking-tight text-default-text leading-none uppercase ">
               Growth is driven by <br />
               <span className="bg-yellow-400 border-4 border-black px-2 inline-block transform -rotate-1 mt-2 rounded-xl dark:text-black/60 text-2xl">
                 Strategic Alignment.
