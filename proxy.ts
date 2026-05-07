@@ -1,4 +1,4 @@
-export { auth as middleware } from "./auth";
+export { auth as middleware } from "./src/auth";
 
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
