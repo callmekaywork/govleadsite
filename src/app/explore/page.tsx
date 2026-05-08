@@ -279,12 +279,12 @@ export default function Page() {
                 className="flex flex-col md:flex-row gap-12 items-center"
               >
                 <div
-                  className={`md:w-1/2 p-12 bg-brand-card-comp-bg border-4 border-slate-900 rounded-[56px] shadow-[12px_12px_0px_0px_rgba(15,23,42,1)] ${i % 2 === 1 ? "md:order-last" : ""}`}
+                  className={`w-full md:w-1/2 p-12 bg-brand-card-comp-bg border-4 border-slate-900 rounded-[56px] shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] ${i % 2 === 1 ? "md:order-last" : ""}`}
                 >
                   <span className="text-xs font-black text-brand-text uppercase tracking-[0.3em] mb-4 block">
                     MECHANISM {idxToNumber(i)}
                   </span>
-                  <h3 className="text-4xl font-black text-default-text mb-6 uppercase italic">
+                  <h3 className="text-2xl w-full font-black text-default-text mb-6 uppercase italic">
                     {s.title}
                   </h3>
                   <p className="text-slate-600 text-lg font-medium leading-relaxed">

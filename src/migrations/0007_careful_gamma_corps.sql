@@ -66,6 +66,18 @@ CREATE TABLE "systems_requests" (
 	"date" timestamp DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
+CREATE TABLE "team_members" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"name" text NOT NULL,
+	"role" text NOT NULL,
+	"bio" text DEFAULT '',
+	"focus" jsonb NOT NULL,
+	"image" text NOT NULL,
+	"email" text NOT NULL,
+	"linkedin" text NOT NULL,
+	"history" jsonb NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE "users" (
 	"uID" text PRIMARY KEY NOT NULL,
 	"firstname" text,

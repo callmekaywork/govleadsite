@@ -15,6 +15,7 @@
   --color-brand-card-bg: var(--brand-card-bg);
   --color-brand-card-acc-bg: var(--brand-card-acc-bg);
   --color-brand-card-comp-bg: var(--brand-card-comp-bg);
+  --color-input-bg: var(--input-bg);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-mono);
@@ -67,6 +68,7 @@
   --brand-card-bg: oklch(100% 0.00011 271.152);
   --brand-card-comp-bg: oklch(100% 0.00011 271.152);
   --brand-card-acc-bg: oklch(100% 0.00011 271.152);
+  --color-input-bg: oklch(94.007% 0.00011 271.152);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -110,6 +112,7 @@
   --brand-card-bg: oklch(31.8% 0.03829 273.723);
   --brand-card-acc-bg: oklch(37.236% 0.06151 272.152);
   --brand-card-comp-bg: oklch(22.232% 0.02973 275.043);
+  --color-input-bg: oklch(22.798% 0.01584 274.075 / 0.288);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);

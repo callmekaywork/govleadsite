@@ -32,17 +32,8 @@ export default function Logo_nav() {
           />
         </Link>
 
-        <div className="h-full w-60 flex md:flex-row-reverse justify-end items-center px-3">
-          <div className="h-13 w-13 flex justify-center items-center ">
-            <DarkModeToggle />
-          </div>
-          {/* <Button
-            className={
-              "h-13 w-30 md:w-40 md:mx-2 rounded-4xl bg-blue-500 border-2 border-black hover:shadow-[2px_2px_0px_#000] cursor-pointer text-xl dark:bg-white dark:border-black dark:text-black"
-            }
-          >
-            Consult
-          </Button> */}
+        <div className="h-full w-35  flex flex-row justify-start items-center px-3">
+          <DarkModeToggle />
         </div>
       </div>
     </div>

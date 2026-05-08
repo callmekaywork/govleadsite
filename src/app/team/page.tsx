@@ -42,7 +42,7 @@ export default function TeamPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans selection:bg-indigo-100 pb-12">
+    <main className="min-h-screen bg-background font-sans selection:bg-indigo-100 pb-12">
       <Logo_nav />
       <Navigation />
       <div className="max-w-7xl mx-auto px-6 md:px-10">
@@ -54,15 +54,15 @@ export default function TeamPage() {
             className="space-y-4"
           >
             <div className="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-stone-900 dark:border-stone-800  border border-indigo-100 px-3 py-1 rounded-full">
-              <span className="w-2 h-2 bg-indigo-600 dark:bg-slate-800 rounded-full"></span>
-              <span className="text-xs font-semibold text-indigo-700 dark:text-indigo-50 uppercase tracking-wider">
+              <span className="w-2 h-2 bg-brand-accent rounded-full"></span>
+              <span className="text-xs font-semibold text-default-text uppercase tracking-wider">
                 The Squad
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
               {currentPage === 0 ? "The Minds Behind" : "Global Talent"}
               <br />
-              <span className="text-indigo-600">The Strategy.</span>
+              <span className="text-brand-accent">The Strategy.</span>
             </h1>
           </motion.div>
 
@@ -175,7 +175,7 @@ export default function TeamPage() {
                     </div>
 
                     {member.id === 1 && (
-                      <div className="absolute -top-4 -left-4 bg-indigo-600 text-white font-handwriting text-3xl px-8 py-3 border-2 border-slate-900 rounded-2xl shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] -rotate-6">
+                      <div className="absolute -top-4 -left-4 bg-brand-card-bg text-white font-handwriting text-3xl px-8 py-3 border-2 border-slate-900  shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] -rotate-6">
                         Captain
                       </div>
                     )}

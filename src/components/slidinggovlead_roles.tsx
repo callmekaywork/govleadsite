@@ -29,7 +29,7 @@ const CARDS: CardData[] = [
     description:
       "Shaping direction and decisions with high-level insight and collaborative foresight.",
     icon: Briefcase,
-    color: "bg-zinc-900",
+    color: "bg-brand-card-acc-bg",
     accent: "text-orange-500",
     image: "https://picsum.photos/seed/strategic1/800/1200",
   },
@@ -39,7 +39,7 @@ const CARDS: CardData[] = [
     description:
       "Designing the structure behind scale to ensure sustainable and aggressive business evolution.",
     icon: BarChart3,
-    color: "bg-zinc-800",
+    color: "bg-brand-card-comp-bg",
     accent: "text-blue-500",
     image: "https://picsum.photos/seed/growth1/800/1200",
   },
@@ -49,7 +49,7 @@ const CARDS: CardData[] = [
     description:
       "Ensuring strategy becomes reality through disciplined systems and operational excellence.",
     icon: Shield,
-    color: "bg-zinc-700",
+    color: "bg-brand-card-bg",
     accent: "text-emerald-500",
     image: "https://picsum.photos/seed/execution1/800/1200",
   },
@@ -92,7 +92,7 @@ export function Sliding_govlead_roles() {
         {/* The Vertical Timeline Structure */}
         <div className="relative max-h-220">
           {/* Central Vertical Line (The Barrier) */}
-          <div className="absolute hidden md:block left-1/2 top-0 bottom-0 w-px bg-zinc-200 -translate-x-1/2 overflow-hidden">
+          <div className="absolute hidden md:block left-1/2 top-0 bottom-0 w-px bg-default-text -translate-x-1/2 overflow-hidden">
             <motion.div
               className="w-full hidden md:block bg-zinc-900 origin-top"
               style={{ height: "70%", scaleY: scrollYProgress }}
@@ -142,7 +142,7 @@ function TimelineCard({ card, index }: { card: CardData; index: number }) {
       {/* Node Dot on the central line */}
       <motion.div
         style={{ opacity }}
-        className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-4 border-black shadow-[2px_2px_0px_#000] z-20 flex items-center justify-center font-mono font-black text-xs rounded-full"
+        className="absolute hidden md:flex left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-4 border-black shadow-[2px_2px_0px_#000] z-20  items-center justify-center font-mono font-black text-xs rounded-full"
       />
 
       {/* The Box */}

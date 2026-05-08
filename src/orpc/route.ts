@@ -28,6 +28,7 @@ import {
   StartupFormSchema,
   startupSchema,
 } from "@/db/validationschemas";
+import { signIn, signOut } from "@/auth";
 
 const LoginSchema = z.object({
   email: z.string().email(),
@@ -126,7 +127,7 @@ export const loginOutput = os
   .handler(async ({ input }) => {
     const { email, password } = input;
 
-    console.log(input);
+    // console.log(input);
 
     // 1. Validate user
     const user = await db
@@ -136,7 +137,10 @@ export const loginOutput = os
       .limit(1)
       .then((res) => res[0]);
 
-    if (!user) throw new Error("Invalid credentials");
+    if (!user) {
+      console.log("user was invalid");
+      throw new Error("Invalid credentials");
+    }
 
     // 2. Check accounts
     const check = await db
@@ -161,19 +165,23 @@ export const loginOutput = os
     }
 
     // sign us in
-    // const checkSignIn = await signIn('credentials', {
-    //   email,
-    //   password,
-    //   redirect: false,
-    // });
+    const checkSignIn = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
 
-    // 3. Return user object
-    return {
-      id: user.id,
-      name: user.firstname,
-      email: user.email,
-      role: user.role,
-    };
+    if (checkSignIn)
+      // 3. Return user object
+      return {
+        id: user.id,
+        name: user.firstname,
+        email: user.email,
+        role: user.role,
+      };
+    else {
+      return { error: "something went wrong!" };
+    }
   });
 
 export const send_request = os
@@ -495,15 +503,15 @@ export const consult_requests = os
 
 export const router = {
   admin: {
-    // auth: loginOutput,
+    auth: loginOutput,
     // create: createNewPost,
     // delete: deletePost,
-    // signout: os
-    //   .input(z.object({ id: z.string() }))
-    //   .handler(async ({ input }) => {
-    //     signOut();
-    //     // redirect('/');
-    //   }),
+    signout: os
+      .input(z.object({ id: z.string() }))
+      .handler(async ({ input }) => {
+        signOut();
+        // redirect('/');
+      }),
   },
   // applications: {
   //   startup: startupapplication,

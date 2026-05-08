@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
+// import SessionProvider
+import { SessionProvider } from "next-auth/react";
+
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
@@ -50,8 +53,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster />
-          {children}
+          <SessionProvider>
+            <Toaster />
+            {children}
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

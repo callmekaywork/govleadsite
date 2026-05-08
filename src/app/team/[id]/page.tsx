@@ -43,7 +43,7 @@ export default function MemberPortfolio() {
   }
 
   return (
-    <main className="min-h-screen dark:bg-slate-950 font-sans selection:bg-indigo-100  pb-24">
+    <main className="min-h-screen bg-background font-sans selection:bg-indigo-100  pb-24">
       <Logo_nav />
       <Navigation />
 

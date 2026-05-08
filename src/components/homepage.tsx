@@ -119,7 +119,7 @@ export default function Homepage() {
 
                 <h2 className="text-5xl md:text-[56px] font-sans font-bold tracking-[-1px] text-slate-900 dark:text-white mb-6 leading-[1.1]">
                   Create Impact That <br />
-                  <span className="text-blue-600">Resonates.</span>
+                  <span className="text-brand-accent">Resonates.</span>
                 </h2>
 
                 <p className="text-lg text-slate-600 dark:text-white/80 mb-10 max-w-xl leading-relaxed">
@@ -142,13 +142,13 @@ export default function Homepage() {
 
                 {/* Main Block CTA */}
                 <div className="flex flex-col sm:flex-row gap-4 items-center">
-                  <div className="flex flex-row justify-center items-center gap-4 px-2 py-4 rounded-full bg-blue-600 text-white font-semibold transition-all hover:bg-blue-700 hover:scale-105 active:scale-95 text-center min-w-50 shadow-lg shadow-blue-600/20">
+                  <div className="flex flex-row justify-center items-center gap-4 px-2 py-4 rounded-full text-white font-semibold transition-all hover:bg-blue-700 hover:scale-105 active:scale-95 text-center min-w-50 ">
                     Send Us Email <ArrowRight />
                   </div>
 
                   <a
                     href="mailto:hello@studio.io"
-                    className="px-8 py-4 rounded-full border border-blue-200 bg-white/50 backdrop-blur-sm text-blue-600 font-semibold transition-all hover:bg-white hover:scale-105 active:scale-95 text-center min-w-50"
+                    className="px-8 py-4 rounded-full border border-brand-card-acc-bg bg-brand-card-comp-bg backdrop-blur-sm text-default-text-text font-semibold transition-all hover:bg-brand-card-acc-bg hover:scale-105 active:scale-95 text-center min-w-50"
                   >
                     info@govlead.co.za
                   </a>
@@ -338,7 +338,7 @@ export default function Homepage() {
                 </div>
 
                 <Button
-                  className="w-full h-16 bg-blue-600 border-2 border-slate-900 rounded-4xl shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex items-center justify-center cursor-pointer hover:bg-slate-900 hover:text-white transition-colors text-2xl"
+                  className="w-full h-16 bg-brand-card-bg  border-2 border-brand-card-bg rounded-4xl shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex items-center justify-center cursor-pointer hover:bg-slate-900 hover:text-accent-text transition-colors text-2xl text-default-text"
                   onClick={async () => {
                     // check email if its empty
                     if (email != "") {
@@ -352,7 +352,8 @@ export default function Homepage() {
                     }
                   }}
                 >
-                  Send request <ArrowRight className="w-6 h-6 text-white" />
+                  Send request{" "}
+                  <ArrowRight className="w-6 h-6 text-default-text" />
                 </Button>
               </div>
 

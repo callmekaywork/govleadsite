@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && drizzle-kit generate && drizzle-kit push",
+    "build": "next build && tsx ./src/scripts/seed_admin.ts",
     "start": "next start",
     "lint": "eslint",
-    "db:migrate": "drizzle-kit generate && drizzle-kit push "
+    "db:migrate": "drizzle-kit generate && drizzle-kit push ",
+    "seed:admin": "tsx ./src/scripts/seed_admin.ts"
   },
   "dependencies": {
     "@auth/core": "^0.34.3",
@@ -25,6 +26,7 @@
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "embla-carousel-react": "^8.6.0",
+    "ldrs": "^1.1.9",
     "lucide-react": "^1.8.0",
     "motion": "^12.38.0",
     "nanoid": "^5.1.11",

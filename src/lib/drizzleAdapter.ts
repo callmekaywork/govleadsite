@@ -1,10 +1,10 @@
-import { db } from '@/db';
-import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import * as schema from '@/db/schema';
-import { AdapterSession, AdapterUser } from 'next-auth/adapters';
-import { randomUUID } from 'crypto';
+import { db } from "@/db";
+import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import * as schema from "@/db/schema";
+import { AdapterSession, AdapterUser } from "next-auth/adapters";
+import { randomUUID } from "crypto";
 
-import { eq } from 'drizzle-orm';
+import { eq } from "drizzle-orm";
 
 export const drizzleAdapter = {
   ...DrizzleAdapter(db, {
@@ -22,9 +22,9 @@ export const drizzleAdapter = {
         image: user.image ?? null,
         emailVerified: user.emailVerified ?? null,
         password: tempPassword, // required unless defaulted
-        role: 'user', // required unless defaulted
-        firstname: '', // required unless defaulted
-        lastname: '', // required unless defaulted
+        role: "user", // required unless defaulted
+        firstname: "", // required unless defaulted
+        lastname: "", // required unless defaulted
       })
       .returning();
 
@@ -53,7 +53,7 @@ export const drizzleAdapter = {
     const result = await db.insert(schema.sessions).values(session).returning();
     // Drizzle returns RowList, so map it:
 
-    console.log('please fucking work');
+    // console.log('please fucking work');
     const row = result[0];
     return {
       sessionToken: row.sessionToken,

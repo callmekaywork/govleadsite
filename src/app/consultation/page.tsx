@@ -172,7 +172,7 @@ export default function Page() {
   // const progress = (step / 4) * 100;
 
   return (
-    <main className="min-h-screen bg-slate-50 font-sans selection:bg-indigo-100 pb-24">
+    <main className="min-h-screen bg-background font-sans selection:bg-brand-card-comp-bg pb-24">
       <Logo_nav />
       <Navigation />
 
@@ -184,13 +184,13 @@ export default function Page() {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-4"
           >
-            <div className="inline-flex items-center gap-2 bg-white border-2 border-slate-900 px-4 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">
-              <Clock className="w-4 h-4 text-indigo-600" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-slate-900">
+            <div className="inline-flex items-center gap-2 bg-brand-card-bg border-2 border-slate-900 px-4 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">
+              <Clock className="w-4 h-4 text-brand-accent" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-default-text">
                 30-Minute Protocol
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-slate-900 uppercase italic tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-6xl font-black text-default-text uppercase italic tracking-tighter leading-none">
               BOOK A STRATEGIC <br />
               <span className="text-indigo-600">CONSULTATION.</span>
             </h1>
@@ -203,11 +203,11 @@ export default function Page() {
         </div>
 
         {/* Form Container */}
-        <div className="bg-white border-4 border-slate-900 rounded-[48px] shadow-[16px_16px_0px_0px_rgba(15,23,42,1)] relative overflow-hidden">
+        <div className="bg-brand-card-comp-bg border-2 border-brand-card-acc-bg rounded-[48px] shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] relative overflow-hidden">
           {/* Progress Bar */}
-          <div className="absolute top-0 left-0 right-0 h-2 bg-slate-100">
+          <div className="absolute top-0 left-0 right-0 h-2 bg-brand-accent">
             <motion.div
-              className="h-full bg-indigo-600"
+              className="h-full bg-default-text"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5 }}
@@ -227,11 +227,11 @@ export default function Page() {
                       className="space-y-8"
                     >
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] rotate-[-4deg]">
+                        <div className="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center text-white shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] rotate-[-4deg]">
                           <User className="w-6 h-6" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-black uppercase italic text-slate-900 leading-none">
+                          <h2 className="text-2xl font-black uppercase italic text-default-text leading-none">
                             About You
                           </h2>
                           <p className="text-xs font-bold text-slate-400 mt-1 uppercase tracking-widest">
@@ -247,7 +247,7 @@ export default function Page() {
                           </label>
                           <input
                             {...register("name", { required: true })}
-                            className={`w-full p-4 bg-slate-50 border-2 rounded-2xl outline-none focus:border-indigo-600 font-bold ${errors.name ? "border-red-500" : "border-slate-100"}`}
+                            className={`w-full px-4 py-2 md:p-4 bg-input-bg border-2 rounded-2xl outline-none focus:border-indigo-600 font-bold ${errors.name ? "border-red-500" : "border-slate-100"}`}
                             placeholder="John Doe"
                           />
                         </div>
@@ -260,7 +260,7 @@ export default function Page() {
                               required: true,
                               pattern: /^\S+@\S+$/i,
                             })}
-                            className={`w-full p-4 bg-slate-50 border-2 rounded-2xl outline-none focus:border-indigo-600 font-bold ${errors.email ? "border-red-500" : "border-slate-100"}`}
+                            className={`w-full px-4 py-2 md:p-4 bg-input-bg border-2 rounded-2xl outline-none focus:border-indigo-600 font-bold ${errors.email ? "border-red-500" : "border-slate-100"}`}
                             placeholder="john@example.com"
                           />
                         </div>
@@ -272,7 +272,7 @@ export default function Page() {
                         </label>
                         <input
                           {...register("mobile", { required: true })}
-                          className={`w-full p-4 bg-slate-50 border-2 rounded-2xl outline-none focus:border-indigo-600 font-bold ${errors.mobile ? "border-red-500" : "border-slate-100"}`}
+                          className={`w-full px-4 py-2 md:p-4 bg-input-bg border-2 rounded-2xl outline-none focus:border-indigo-600 font-bold ${errors.mobile ? "border-red-500" : "border-slate-100"}`}
                           placeholder="+27 00 000 0000"
                         />
                       </div>
@@ -323,11 +323,11 @@ export default function Page() {
                       className="space-y-8"
                     >
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 bg-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] rotate-3">
+                        <div className="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center text-default-text shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] rotate-3">
                           <Building2 className="w-6 h-6" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-black uppercase italic text-slate-900 leading-none">
+                          <h2 className="text-2xl font-black uppercase italic text-default-text leading-none">
                             About Your Business
                           </h2>
                           <p className="text-xs font-bold text-slate-400 mt-1 uppercase tracking-widest">
@@ -336,7 +336,7 @@ export default function Page() {
                         </div>
                       </div>
 
-                      <div className="bg-slate-50 p-6 rounded-3xl border-2 border-slate-100 flex items-center justify-between">
+                      <div className="bg-brand-card-comp-bg p-6 rounded-3xl border border-brand-card-acc-bg flex items-center justify-between">
                         <p className="text-sm font-bold text-slate-500">
                           Do you currently run a business?
                         </p>
@@ -350,7 +350,7 @@ export default function Page() {
                                   shouldValidate: true,
                                 })
                               }
-                              className={`px-6 py-2 rounded-xl border-2 font-bold text-xs transition-all ${formData.hasBusiness === (v === "Yes") ? "bg-slate-900 text-white border-slate-900" : "bg-white text-slate-400 border-slate-100"}`}
+                              className={`px-6 py-2 rounded-xl border-2 font-bold text-xs transition-all ${formData.hasBusiness === (v === "Yes") ? "bg-black text-white " : "bg-slate-500/20 text-slate-400 "}`}
                             >
                               {v}
                             </button>
@@ -367,7 +367,7 @@ export default function Page() {
                               </label>
                               <input
                                 {...register("businessName")}
-                                className="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold"
+                                className="w-full px-4 py-2 md:p-4 bg-input-bg border border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold"
                                 placeholder="Acme Corp"
                               />
                             </div>
@@ -377,7 +377,7 @@ export default function Page() {
                               </label>
                               <input
                                 {...register("industry")}
-                                className="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold"
+                                className="w-full px-4 py-2 md:p-4 bg-input-bg border border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold"
                                 placeholder="SaaS / Fintech / Gov"
                               />
                             </div>
@@ -390,7 +390,7 @@ export default function Page() {
                               </label>
                               <select
                                 {...register("businessStage")}
-                                className="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold appearance-none"
+                                className="w-full px-4 py-2 md:p-4 bg-brand-card-bg border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold appearance-none"
                               >
                                 <option value="">Select Stage...</option>
                                 <option value="Idea">Idea / Pre-launch</option>
@@ -405,7 +405,7 @@ export default function Page() {
                               </label>
                               <input
                                 {...register("website")}
-                                className="w-full p-4 bg-slate-50 border-2 border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold"
+                                className="w-full px-4 py-2 md:p-4 bg-brand-card-bg border-slate-100 rounded-2xl outline-none focus:border-indigo-600 font-bold"
                                 placeholder="https://..."
                               />
                             </div>
@@ -483,15 +483,15 @@ export default function Page() {
                         </label>
                         <textarea
                           {...register("clarityGoal", { required: true })}
-                          className={`w-full p-4 bg-slate-50 border-2 rounded-2xl outline-none focus:border-indigo-600 font-medium min-h-30 ${errors.clarityGoal ? "border-red-500" : "border-slate-100"}`}
+                          className={`w-full p-4 bg-brand-card-bg rounded-2xl outline-none focus:border-indigo-600 font-medium min-h-30 ${errors.clarityGoal ? "border-red-500" : "border-slate-100"}`}
                           placeholder="Please describe what you hope to achieve in 30 minutes..."
                         />
                       </div>
 
-                      <div className="bg-indigo-50 p-6 rounded-3xl border-2 border-indigo-100 space-y-4">
+                      <div className="bg-brand-card-bg p-6 rounded-3xl border border-indigo-100 space-y-4">
                         <div className="flex items-center gap-2">
-                          <AlertCircle className="w-4 h-4 text-indigo-600" />
-                          <p className="text-xs font-black text-indigo-900 uppercase">
+                          <AlertCircle className="w-4 h-4 text-default-text" />
+                          <p className="text-xs font-black text-default-text uppercase">
                             Implementation Readiness
                           </p>
                         </div>
@@ -528,7 +528,7 @@ export default function Page() {
                           <Calendar className="w-6 h-6" />
                         </div>
                         <div>
-                          <h2 className="text-2xl font-black uppercase italic text-slate-900 leading-none">
+                          <h2 className="text-2xl font-black uppercase italic text-default-text leading-none">
                             Choose a Preferred Time
                           </h2>
                           <p className="text-xs font-bold text-slate-400 mt-1 uppercase tracking-widest">
@@ -549,7 +549,7 @@ export default function Page() {
                               {...register("preferredDateTime", {
                                 required: true,
                               })}
-                              className={`w-full p-4 bg-white border-2 rounded-2xl font-black outline-none focus:ring-4 focus:ring-indigo-100 ${errors.preferredDateTime ? "border-red-500" : "border-slate-900"}`}
+                              className={`w-full px-2 py-4 md:p-4 bg-brand-card-acc-bg border-2 rounded-2xl font-black outline-none focus:ring-4 focus:ring-indigo-100 ${errors.preferredDateTime ? "border-red-500" : "border-slate-900"}`}
                             />
                             <div className="bg-slate-900 text-white p-6 rounded-[32px] space-y-2">
                               <p className="text-[10px] font-black text-indigo-400 uppercase tracking-widest">
@@ -563,12 +563,12 @@ export default function Page() {
                             </div>
                           </div>
                         </div>
-                        <div className="bg-slate-50 border-2 border-slate-100 rounded-[40px] p-8 flex flex-col justify-center gap-6">
+                        <div className="bg-brand-card-acc-bg border border-brand-card-bg rounded-[40px] p-8 flex flex-col justify-center gap-6">
                           <div className="space-y-1">
                             <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest">
                               Meeting Duration
                             </p>
-                            <p className="text-3xl font-black text-slate-900 italic uppercase">
+                            <p className="text-3xl font-black text-default-text italic uppercase">
                               30 Minutes
                             </p>
                           </div>
@@ -576,7 +576,7 @@ export default function Page() {
                             <p className="text-[10px] font-black text-slate-300 uppercase tracking-widest">
                               Format
                             </p>
-                            <p className="text-2xl font-black text-slate-900 italic uppercase">
+                            <p className="text-2xl font-black text-accent-text italic uppercase">
                               Virtual Lab
                             </p>
                           </div>
@@ -611,14 +611,14 @@ export default function Page() {
                     <button
                       type="button"
                       onClick={nextStep}
-                      className="px-10 py-4 bg-slate-900 text-white rounded-2xl font-black uppercase italic shadow-[4px_4px_0px_0px_rgba(79,70,229,1)] hover:translate-y-1 hover:shadow-none active:translate-y-2 transition-all flex items-center gap-3"
+                      className="md:px-10 md:py-4 px-2 text-sm py-2 bg-brand-bacground text-white rounded-2xl font-black uppercase italic shadow-[4px_4px_0px_0px_rgba(79,70,229,1)] hover:translate-y-1 hover:shadow-none active:translate-y-2 transition-all flex items-center gap-3"
                     >
                       Next Step Here <ArrowRight className="w-5 h-5" />
                     </button>
                   ) : (
                     <button
                       type="submit"
-                      className="px-10 py-4 bg-indigo-600 text-white rounded-2xl font-black uppercase italic shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:translate-y-1 hover:shadow-none active:translate-y-2 transition-all flex items-center gap-3 cursor-pointer"
+                      className="md:px-10 md:py-4 px-2 text-sm py-2 bg-brand-bacground text-white rounded-2xl font-black uppercase italic shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:translate-y-1 hover:shadow-none active:translate-y-2 transition-all flex items-center gap-3 cursor-pointer"
                     >
                       Submit Protocol <ChevronRight className="w-5 h-5" />
                     </button>
@@ -687,7 +687,7 @@ export default function Page() {
       </div>
 
       {/* Philosophy Footnote */}
-      <div className="mt-20 py-8 border-y-2 border-slate-100 border-dashed flex flex-col md:flex-row items-center justify-between gap-8 opacity-60 italic">
+      <div className="mt-20 md:px-50 lg:px-70 py-8 border-y-2 border-slate-100 border-dashed flex flex-col md:flex-row items-center justify-between md:justify-center gap-8 opacity-60 italic">
         <p className="text-sm font-bold text-slate-400 max-w-xs text-center md:text-left">
           We value high-velocity clarity over low-value persuasion.
         </p>
