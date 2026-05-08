@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && tsx ./src/scripts/seed_admin.ts",
+    "build": "next build ",
     "start": "next start",
     "lint": "eslint",
     "db:migrate": "drizzle-kit generate && drizzle-kit push ",
