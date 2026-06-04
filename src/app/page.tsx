@@ -16,6 +16,17 @@ import { IdealClient } from "@/components/idealclient";
 import { GovLeadPromise } from "@/components/govleadpromise";
 import { Footer } from "@/components/footer";
 import Homepage from "@/components/homepage";
+import Corecapabilities from "@/components/corecapabilities";
+import Case_studies from "@/components/strategicplacement";
+import StrategicPlacement from "@/components/strategicplacement";
+import Casestudies from "@/components/casestudies";
+import Problems from "@/components/problems";
+import Strategicgrowthfirm from "@/components/strategicgrowthfirm";
+import Proprietaryblueprint from "@/components/proprietaryblueprint";
+import Comprehensivecapabilities from "@/components/comprehensivecapabilities";
+import Operationalmethodology from "@/components/operationalmethodology";
+import Homeinsights from "@/components/homeinsights";
+import Consultations from "@/components/consultations";
 
 export default function Home() {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
@@ -43,20 +54,29 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-slate-900 ">
+    <div className="w-full flex flex-col items-center justify-center bg-background ">
       <Logo_nav />
 
       <Navigation />
 
       <Homepage />
-      <Sliding_govlead_roles />
-      <Strategiclens />
+      <Problems />
+      <Strategicgrowthfirm />
+      <Proprietaryblueprint />
+      <Comprehensivecapabilities />
+      <Operationalmethodology />
+      <Homeinsights />
+      <Consultations />
+      {/* <Corecapabilities />
+      <StrategicPlacement />
+      <Casestudies /> */}
+      {/* <Strategiclens /> */}
 
-      <div ref={infoSectionRef} className="w-full">
+      {/* <div ref={infoSectionRef} className="w-full">
         <WhatWeDo onSelectService={handleSelectService} />
-      </div>
+      </div> */}
 
-      <div ref={detailSectionRef} className="w-full bg-transparent">
+      {/* <div ref={detailSectionRef} className="w-full bg-transparent">
         <AnimatePresence>
           {selectedServiceId && (
             <motion.div
@@ -73,14 +93,14 @@ export default function Home() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </div> */}
 
-      <ServicePillars />
+      {/* <ServicePillars />
       <AboutDiff />
       <IdealClient />
-      <GovLeadPromise />
+      <GovLeadPromise /> */}
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 // import SessionProvider
 import { SessionProvider } from "next-auth/react";
+import Bottomtag from "@/components/bottomtag";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -58,6 +59,8 @@ export default function RootLayout({
             {children}
           </SessionProvider>
         </ThemeProvider>
+
+        {/* <Bottomtag /> */}
       </body>
     </html>
   );

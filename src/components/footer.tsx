@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 import {
   Mail,
@@ -9,11 +9,19 @@ import {
   MessageCircle,
   ArrowUpRight,
   Globe,
+  Building2,
 } from "lucide-react";
 
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export function Footer() {
+  // Newsletter subscription Form State
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
+
+  const { theme } = useTheme();
+
   const companyPhone = "0712198630"; // Dummy number
   const whatsappMessage = encodeURIComponent(
     "Hello GovLead, this is a pre-written test message I'm interested in a strategic consultation for my business.",
@@ -44,156 +52,126 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full mt-24 relative ">
-      {/* Main Footer Container */}
-      <div className="bg-zinc-900 w-full overflow-hidden">
-        {/* Top Section: CTA & Contact */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 border-b-4 border-black">
-          <div className="p-12 lg:p-16 space-y-8 bg-zinc-800">
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-6xl font-sans font-black text-white uppercase tracking-tighter leading-none">
-                Ready to <br />
-                <span className="text-yellow-400">Hard-Code</span> <br />
-                Your Growth?
-              </h2>
-              <p className="text-zinc-400 font-medium text-lg max-w-md">
-                We don&apos;t just advise—we build. Connect with a lead
-                architect to discuss your systems.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-500 border-4 border-black text-black font-black uppercase tracking-widest hover:-translate-y-1 hover:shadow-[4px_4px_0px_#000] active:translate-y-0 active:shadow-none transition-all rounded-2xl group"
-              >
-                <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-                Quick WhatsApp Reach-out
-              </a>
+    <footer
+      id="govlead-footer"
+      className="bg-footer-background border-t-4 border-black text-white font-mono text-xs mt-16 w-full"
+    >
+      {/* Dynamic Neobrutalist Grid Blocks */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 border-b border-neutral-800 ">
+        <div className="p-8 space-y-8 border-b md:border-b-0 md:border-r border-neutral-800">
+          <div className="flex items-center gap-2 font-black text-lg text-white">
+            <div className="md:h-20 md:w-60 h-10 w-30 text-4xl flex justify-center items-center">
+              <Image
+                src={
+                  theme == "dark"
+                    ? "/parent_logoWTrans.png"
+                    : theme == "system"
+                      ? "/parent_logoWTrans.png"
+                      : "/parent_logo.png"
+                }
+                width={300}
+                height={100}
+                alt="Govlead Logo Image"
+              />
             </div>
           </div>
-
-          <div className="p-12 lg:p-16 bg-white space-y-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-2">
-                <p className="text-zinc-400 font-mono text-[10px] uppercase font-black tracking-widest">
-                  HQ / Logistics
-                </p>
-                <p className="text-black font-black uppercase text-sm flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                  Motlhabeng Mafikeng
-                  <br />
-                  2745
-                </p>
-              </div>
-              <div className="space-y-2">
-                <p className="text-zinc-400 font-mono text-[10px] uppercase font-black tracking-widest">
-                  Connect / Secure
-                </p>
-                <div className="space-y-1">
-                  <a
-                    href="mailto:hi@govlead.com"
-                    className="text-black font-black uppercase text-sm flex items-center gap-2 hover:text-emerald-600 transition-colors"
-                  >
-                    <Mail className="w-4 h-4 text-emerald-500" />
-                    info@govleadgroup.co.za
-                  </a>
-                  <p className="text-black font-black uppercase text-sm flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-emerald-500" />
-                    +00 000 0000
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-8 border-t-2 border-black/10 flex items-center gap-6">
-              {/* <a
-                href="#"
-                className="w-12 h-12 bg-black flex items-center justify-center border-2 border-black rounded-xl hover:-translate-y-1 transition-all text-white"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-black flex items-center justify-center border-2 border-black rounded-xl hover:-translate-y-1 transition-all text-white"
-              >
-                <Twitter className="w-5 h-5" />
-              </a> */}
-              <a
-                href="www.govleadgroup.co.za"
-                className="w-12 h-12 bg-black flex items-center justify-center border-2 border-black rounded-xl hover:-translate-y-1 transition-all text-white"
-              >
-                <Globe className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Middle Section: Links */}
-        <div className="p-12 lg:p-16 grid grid-cols-2 md:grid-cols-4 gap-12 bg-zinc-900 border-b-4 border-black">
-          <div className="col-span-2 md:col-span-1 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-40 h-40 bg-black border-2 border-black flex items-center justify-center rounded-lg">
-                <span className="text-black font-mono font-black text-xl">
-                  <Image
-                    src={"/parent_logoWTrans.png"}
-                    width={300}
-                    height={300}
-                    alt={"govlead-logo"}
-                  />
-                </span>
-              </div>
-              <span className="text-white font-sans font-black text-2xl uppercase tracking-tighter">
-                GovLead
-              </span>
-            </div>
-            <p className="text-zinc-500 text-xs font-mono uppercase tracking-widest leading-loose">
-              Strategic Growth Architecture. <br />
-              Turning chaos into code. <br />
-              Systems into profit.
-            </p>
-          </div>
-
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} className="space-y-4">
-              <p className="text-white font-mono text-[10px] uppercase font-black tracking-[0.2em]">
-                {category}
-              </p>
-
-              <ul className="space-y-2">
-                {links.map((link, idx) => (
-                  <li key={idx}>
-                    <a
-                      href={`${category.toLowerCase()}/${link.link}`}
-                      className="text-zinc-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-tight flex items-center gap-1 group"
-                    >
-                      {link.name}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Section: Legal & Scroll */}
-        <div className="p-8 bg-zinc-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-zinc-500 font-mono text-[10px] uppercase font-black tracking-widest">
-            © 2026 GovLead Internal Systems. ALL PROTOCOLS ENFORCED.
+          <p className=" text-default-text ">
+            We help scaling businesses calibrate overall direction and design
+            growth systems. Operating natively as an institutional firm rather
+            than a commoditized service provider.
           </p>
+        </div>
 
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-white font-mono text-[10px] uppercase font-black tracking-widest hover:text-emerald-400 transition-colors group"
-          >
-            Back to Terminal
-            <div className="w-8 h-8 bg-zinc-700 border-2 border-black flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-black transition-all rounded-lg">
-              <ArrowUpRight className="w-4 h-4" />
+        <div className="p-8 space-y-3 border-b md:border-b-0 md:border-r border-neutral-800">
+          <span className="text-[10px] font-black uppercase text-neutral-500 block">
+            NAVIGATION
+          </span>
+          <ul className="space-y-1.5  font-extrabold uppercase">
+            {["home", "about", "services", "frameworks"].map((tab) => (
+              <li key={tab}>
+                <button
+                  // onClick={() => setActiveTab(tab)}
+                  className="hover:text-[#2563EB] text-default-text transition-all cursor-pointer text-left"
+                >
+                  / {tab.replace("-", " ")}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="p-8 space-y-3 border-b md:border-b-0 md:border-r border-neutral-800">
+          {/* <span className="text-[10px] font-black uppercase text-neutral-500 block">
+            RECONNAISSANCE
+          </span>
+          <ul className="space-y-1.5 text-[11px] font-extrabold uppercase">
+            {["insights", "case-studies", "work-with-us", "contact"].map(
+              (tab) => (
+                <li key={tab}>
+                  <button
+                    // onClick={() => setActiveTab(tab)}
+                    className="hover:text-[#2563EB] text-neutral-300 transition-all cursor-pointer text-left"
+                  >
+                    / {tab.replace("-", " ")}
+                  </button>
+                </li>
+              ),
+            )}
+          </ul> */}
+        </div>
+
+        <div className="p-8 space-y-4">
+          <span className="text-[10px] font-black uppercase text-neutral-500 block">
+            NEWSLETTER BRIEFINGS
+          </span>
+          {newsletterSubscribed ? (
+            <div className="bg-neutral-800 border border-neutral-700 p-3 rounded-xl font-mono text-[10px] text-emerald-400">
+              Briefing subscription registered. Check your inbox for periodic
+              insights.
             </div>
-          </button>
+          ) : (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (newsletterEmail) setNewsletterSubscribed(true);
+              }}
+              className="flex"
+            >
+              <input
+                type="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="advisory@email.com"
+                className="bg-black text-white p-2 text-[10px] border border-neutral-700 outline-none flex-1 focus:border-[#2563EB] rounded-l-xl"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-[#2563EB] text-white px-3.5 border border-black font-bold font-mono hover:bg-[#1D4ED8] active:translate-y-px cursor-pointer rounded-r-xl"
+              >
+                Join
+              </button>
+            </form>
+          )}
+          <span className="text-[9px] text-neutral-500 font-sans block">
+            Weekly deep-dives inside B3 scaling.
+          </span>
+        </div>
+      </div>
+
+      {/* Closing copyright row */}
+      <div className="max-w-7xl mx-auto px-8 py-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-neutral-500 gap-4">
+        <div>
+          &copy; {new Date().getFullYear()} GovLead Group Ltd. All rights
+          reserved. Registered strategic advisory board agency.
+        </div>
+        <div className="flex gap-4">
+          {/* <a href="#govlead-root" className="hover:underline">
+            Legal Integrity Charter
+          </a> */}
+          {/* <a href="#govlead-root" className="hover:underline">
+            System Diagnostic Sandbox Policy
+          </a> */}
         </div>
       </div>
     </footer>

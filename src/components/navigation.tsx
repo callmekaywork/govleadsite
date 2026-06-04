@@ -8,10 +8,15 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const navItems = [
-  { name: "Welcome", path: "/" },
-  { name: "Explore", path: "/explore" },
-  { name: "Consultation", path: "/consultation" },
-  { name: "Our Team", path: "/team" },
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Framework", path: "/frameworks" },
+  { name: "Insights", path: "/insights" },
+  { name: "Contact Us", path: "/workwithgovlead" },
+  { name: "Aboutus", path: "/aboutus" },
+  // { name: "Case Studies", path: "/casestudies" },
+  // { name: "Reach Us", path: "/reach-us" },
+  // { name: "Our Team", path: "/team" },
 ];
 
 export default function Navigation() {
@@ -43,6 +48,7 @@ export default function Navigation() {
                   isActive
                     ? "text-blue-600"
                     : "text-slate-400 hover:text-blue-600",
+                  item.name === "Case Studies" ? "max-w-50" : "max-w-30",
                 )}
               >
                 {isActive && (
