@@ -12,8 +12,8 @@ const navItems = [
   { name: "Services", path: "/services" },
   { name: "Framework", path: "/frameworks" },
   { name: "Insights", path: "/insights" },
-  { name: "Contact Us", path: "/workwithgovlead" },
   { name: "Aboutus", path: "/aboutus" },
+  { name: "Contact Us", path: "/workwithgovlead" },
   // { name: "Case Studies", path: "/casestudies" },
   // { name: "Our Team", path: "/team" },
 ];

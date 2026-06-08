@@ -19,21 +19,21 @@ export default function Problems() {
           <div className="space-y-15">
             <h2 className="text-3xl md:text-5xl lg:text-6xl text-defau;t-text font-black uppercase leading-[1.1] tracking-tight">
               Most Businesses Do Not <br />
-              <span className="italic font-light text-black bg-brand-bacground px-4 py-1.5 inline-block border-[3px] border-black rounded-2xl shadow-[4.5px_4.5px_0px_#000] mt-3">
+              <span className="italic font-light text-default-light-text bg-brand-bacground px-4 py-1.5 inline-block border-[3px] border-black rounded-2xl shadow-[4.5px_4.5px_0px_#000] mt-3">
                 Struggle Because of Effort.
               </span>
             </h2>
           </div>
 
           {/* Supporting Heading */}
-          <div className="border-l-[5px] border-black pl-5 space-y-2">
-            <p className="text-xl md:text-2xl font-serif text-default-text font-black ">
+          <div className="border-l-[5px] border-brand-accent pl-5 space-y-2 bg-brand-bacground/25 py-3">
+            <p className="text-xl md:text-2xl text-default-text font-black ">
               They struggle because growth systems are fragmented.
             </p>
           </div>
 
           {/* Copy Direction Narrative */}
-          <div className="space-y-6 text-sm md:text-base text-black/85 font-semibold leading-relaxed max-w-2xl">
+          <div className="space-y-6 text-sm md:text-base text-default-text font-semibold leading-relaxed max-w-2xl">
             <p>
               Many organisations invest heavily in marketing, operations,
               technology, and sales, yet still struggle to achieve sustainable
@@ -63,14 +63,14 @@ export default function Problems() {
 
         {/* Right Interactive / Visual Symptom Column */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="bg-[#FAF9F5] border-[3px] border-black p-8 rounded-3xl shadow-[6px_6px_0px_#000] space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(rgba(0,0,0,0.03)_1px,transparent_1px)] [background-size:10px_10px] opacity-30"></div>
+          <div className="bg-brand-card-bg border-[3px] border-black p-8 rounded-3xl shadow-[6px_6px_0px_#000] space-y-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(rgba(0,0,0,0.03)_1px,transparent_1px)] bg-size-[10px_10px] opacity-30"></div>
 
             <div className="space-y-4">
-              <h4 className=" text-lg font-black  text-[#000]">
+              <h4 className=" text-lg font-black  text-default-text">
                 The Symptoms of Systemic Drag
               </h4>
-              <p className="text-xs text-[#000]/60 font-semibold leading-relaxed">
+              <p className="text-xs text-accent-text font-semibold leading-relaxed">
                 When key operating engines are siloed, they generate predictable
                 internal drag.
               </p>
@@ -78,60 +78,60 @@ export default function Problems() {
 
             {/* Symptom Cards Stack */}
             <div className="space-y-3.5 pt-2">
-              <div className="flex items-start bg-white border-[2.5px] border-black p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4.5px_4.5px_0px_#000]">
+              <div className="flex items-start bg-brand-card-acc-bg border-[2.5px] border-brand-card-comp-bg p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0px_#000]">
                 <div className="bg-red-100 border-[1.5px] border-black p-2 rounded-xl text-black shrink-0 mr-4 shadow-[1.5px_1.5px_0px_#000]">
                   <Layers className="w-5 h-5 text-red-600" />
                 </div>
                 <div>
-                  <h5 className="text-xs text-black font-black uppercase tracking-wider font-mono">
+                  <h5 className="text-xs text-default-text font-black uppercase tracking-wider font-mono">
                     Unclear Strategic Direction
                   </h5>
-                  <p className="text-xs text-black/70 font-semibold mt-1">
+                  <p className="text-xs text-accent-text font-semibold mt-1">
                     Silos cloud executive vision, making prioritization and
                     long-term positioning highly speculative.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start bg-white border-[2.5px] border-black p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4.5px_4.5px_0px_#000]">
-                <div className="bg-orange-100 border-[1.5px] border-black p-2 rounded-xl text-black shrink-0 mr-4 shadow-[1.5px_1.5px_0px_#000]">
+              <div className="flex items-start bg-brand-card-acc-bg  border-[2.5px] border-brand-card-comp-bg p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0px_#000]">
+                <div className="bg-orange-100 border-[1.5px] border-black p-2 rounded-xl text-default-text shrink-0 mr-4 shadow-[1.5px_1.5px_0px_#000]">
                   <TrendingDown className="w-5 h-5 text-orange-600" />
                 </div>
                 <div>
-                  <h5 className="text-xs text-black font-black uppercase tracking-wider font-mono">
+                  <h5 className="text-xs text-default-text font-black uppercase tracking-wider font-mono">
                     Weakened Market Positioning
                   </h5>
-                  <p className="text-xs text-black/70 font-semibold mt-1">
+                  <p className="text-xs text-accent-text font-semibold mt-1">
                     Value propositions erode when brand communication functions
                     separately from sales realities.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start bg-white border-[2.5px] border-black p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4.5px_4.5px_0px_#000]">
+              <div className="flex items-start bg-brand-card-acc-bg border-[2.5px] border-brand-card-comp-bg p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0px_#000]">
                 <div className="bg-yellow-100 border-[1.5px] border-black p-2 rounded-xl text-black shrink-0 mr-4 shadow-[1.5px_1.5px_0px_#000]">
                   <Users2 className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h5 className="text-xs text-black font-black uppercase tracking-wider font-mono">
+                  <h5 className="text-xs text-default-text font-black uppercase tracking-wider font-mono">
                     Inconsistent Client Inflow
                   </h5>
-                  <p className="text-xs text-black/70 font-semibold mt-1">
+                  <p className="text-xs text-accent-text font-semibold mt-1">
                     Lead acquisition operates as an ad-hoc project, preventing
                     predictable revenue pipelines.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start bg-white border-[2.5px] border-black p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4.5px_4.5px_0px_#000]">
+              <div className="flex items-start bg-brand-card-acc-bg border-[2.5px] border-brand-card-comp-bg p-4 rounded-2xl shadow-[3px_3px_0px_#000] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4.5px_4.5px_0px_#000]">
                 <div className="bg-blue-100 border-[1.5px] border-black p-2 rounded-xl text-black shrink-0 mr-4 shadow-[1.5px_1.5px_0px_#000]">
                   <Network className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h5 className="text-xs text-black font-black uppercase tracking-wider font-mono">
+                  <h5 className="text-xs text-default-text font-black uppercase tracking-wider font-mono">
                     Technology Dysconnectivity
                   </h5>
-                  <p className="text-xs text-black/70 font-semibold mt-1">
+                  <p className="text-xs text-accent-text font-semibold mt-1">
                     Software platforms fail to talk to one another, stalling
                     data extraction and workflow automation.
                   </p>

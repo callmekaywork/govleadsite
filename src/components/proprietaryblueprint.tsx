@@ -54,13 +54,13 @@ export default function Proprietaryblueprint() {
   return (
     <section
       id="growth-architecture-segment"
-      className="mt-20 space-y-18 max-w-400"
+      className="mt-20 space-y-18 max-w-400 px-4 md:px-0"
     >
       <div className="text-center space-y-4">
-        <h2 className="text-3xl md:text-5xl font-black text-black tracking-tight">
+        <h2 className="text-3xl md:text-5xl font-black text-default-text tracking-tight">
           The Architecture Behind Sustainable Growth
         </h2>
-        <p className="text-base text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base text-accent-text max-w-2xl mx-auto leading-relaxed">
           GovLead believes that sustainable growth emerges when the core systems
           of an organisation operate in alignment. Our Growth Architecture
           Framework identifies five interconnected systems.
@@ -70,43 +70,35 @@ export default function Proprietaryblueprint() {
       {/* Dynamic Interactive Diagram of 5 Areas */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Visual Selector Side */}
-        <div className="lg:col-span-5 flex flex-col justify-between border-4 border-black bg-white p-6 md:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-2xl">
+        <div className="lg:col-span-5 flex flex-col justify-between border-4 border-black bg-brand-card-comp-bg p-6 md:p-8 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] rounded-2xl">
           <div className="space-y-4">
-            <div className="font-mono text-xs text-[#FB923C] font-black uppercase tracking-widest bg-orange-50 border border-orange-200 px-2 py-0.5 w-max rounded-md">
-              SYSTEM INTERACTIVE SANDBOX
-            </div>
-            <div className="text-2xl font-black text-black">
+            <div className="text-2xl font-black text-default-text">
               Explore the Pillars Interconnection
             </div>
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-accent-text">
               Click the blueprint components on the right to dissect specific
               vulnerabilities and structural outcomes of each aligned growth
               sub-system.
             </p>
           </div>
 
-          <div className="mt-8 border-4 border-black bg-white p-4 font-mono space-y-4 relative rounded-xl">
+          <div className="mt-8 border-4 border-black bg-brand-card-bg p-4 font-mono space-y-4 relative rounded-xl">
             <span className="absolute top-0 right-0 -translate-y-3 translate-x-2 bg-neutral-900 text-white border border-black px-2 py-0.5 text-[8px] font-bold rounded">
-              ACTIVE PILLAR: 0{pillars[selectedPillar].index}
+              TAB {pillars[selectedPillar].index}
             </span>
-            <div className="font-black text-base text-black uppercase tracking-tight">
+            <div className="font-black text-base text-default-text uppercase tracking-tight">
               {pillars[selectedPillar].title}
             </div>
-            <div className="text-xs text-neutral-600 leading-relaxed font-sans">
+            <div className="text-xs text-brand-text leading-relaxed font-sans">
               {pillars[selectedPillar].desc}
             </div>
-            <div className="text-xs font-sans text-neutral-700 bg-blue-50/60 p-2.5 border-l-4 border-[#2563EB] rounded-r-lg">
+            <div className="text-xs font-sans text-brand-text bg-brand-card-acc-bg p-2.5 border-l-4 border-[#2563EB] rounded-r-lg">
               <span className="font-bold block uppercase font-mono text-[9px] mb-1">
                 Structural Impact:
               </span>
               {pillars[selectedPillar].details}
             </div>
-            <div className="text-[10px] font-black flex items-center gap-1.5 text-emerald-700 uppercase">
-              <span className="inline-block w-2.5 h-2.5 bg-emerald-500 border border-black rounded-sm"></span>
-              <span>
-                Alignment Calibrator: {pillars[selectedPillar].status}
-              </span>
-            </div>
+            <div className="text-[10px] font-black flex items-center gap-1.5 text-emerald-700 uppercase"></div>
           </div>
         </div>
 
@@ -118,8 +110,8 @@ export default function Proprietaryblueprint() {
               onClick={() => setSelectedPillar(idx)}
               className={`w-full text-left border-4 border-black p-4 md:p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex items-center justify-between gap-4 transition-all pr-8 cursor-pointer relative rounded-2xl overflow-hidden ${
                 selectedPillar === idx
-                  ? "bg-[#2563EB] translate-x-1 translate-y-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-white"
-                  : "bg-white hover:bg-neutral-50 text-neutral-800"
+                  ? "bg-brand-card-acc-bg translate-x-1 translate-y-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-default-light-text"
+                  : "bg-brand-card-comp-bg hover:bg-brand-bg-light text-neutral-800"
               }`}
             >
               {selectedPillar === idx && (
@@ -127,15 +119,15 @@ export default function Proprietaryblueprint() {
               )}
 
               <div className="flex items-center gap-4">
-                <span className="font-mono text-2xl font-black border-2 border-black w-10 h-10 flex items-center justify-center bg-white text-black shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl">
+                <span className="font-mono text-2xl font-black border-2 border-black w-10 h-10 flex items-center justify-center bg-brand-card-comp-bg text-default-text shrink-0 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl">
                   {idx + 1}
                 </span>
                 <div>
-                  <h3 className="font-mono text-sm md:text-base uppercase font-black tracking-wider">
+                  <h3 className="font-mono text-default-text text-sm md:text-base uppercase font-black tracking-wider">
                     {pill.title}
                   </h3>
                   <p
-                    className={`text-xs font-sans hidden md:block mt-1 line-clamp-1 ${selectedPillar === idx ? "text-blue-100" : "text-neutral-600"}`}
+                    className={`text-xs font-sans hidden md:block mt-1 line-clamp-1 ${selectedPillar === idx ? "text-default-text" : "text-brand-text"}`}
                   >
                     {pill.desc}
                   </p>
@@ -149,7 +141,7 @@ export default function Proprietaryblueprint() {
       </div>
 
       {/* Framework Closing Card */}
-      <div className="border-4 border-black bg-stone-100 p-6 md:p-8 font-mono text-xs md:text-sm text-center leading-relaxed rounded-2xl">
+      <div className="border-4 border-black bg-brand-bg-light p-6 md:p-8 font-mono text-xs md:text-sm text-center leading-relaxed rounded-2xl">
         &quot;When these systems operate together coherently, organisations
         develop the ability to grow consistently rather than reactively.&quot;
       </div>
