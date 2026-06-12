@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 
 export default function Workwithgovlead() {
   return (
-    <main className=" relative bg-background w-full flex flex-1 flex-col justify-between items-center">
+    <main className=" bg-background w-full flex flex-1 flex-col justify-between items-center">
       <Logo_nav />
       <Navigation />
       <div className="flex flex-col justify-between">

@@ -183,7 +183,7 @@ export default function Homepage() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 pt-4">
               {/* Hero CTAs */}
               <Link
-                href={"/"}
+                href={"/workwithgovlead"}
                 className="flex justify-center items-center gap-2 bg-[#2563EB] text-white border-3 border-black font-mono font-extrabold uppercase py-4 px-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-0 active:translate-y-0 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all cursor-pointer text-sm rounded-xl"
               >
                 <span>Book a Strategic Consultation</span>
