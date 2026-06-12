@@ -9,7 +9,7 @@ import Strategiclens from "@/components/strategiclens";
 import { WhatWeDo } from "@/components/whatwedo";
 import { AnimatePresence, motion } from "motion/react";
 import { Explainwhatwedo } from "@/components/explain-whatwedo";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ServicePillars } from "@/components/servicepillars";
 import { AboutDiff } from "@/components/aboutdiffs";
 import { IdealClient } from "@/components/idealclient";
@@ -27,8 +27,35 @@ import Comprehensivecapabilities from "@/components/comprehensivecapabilities";
 import Operationalmethodology from "@/components/operationalmethodology";
 import Homeinsights from "@/components/homeinsights";
 import Consultations from "@/components/consultations";
+import {
+  DEFAULT_PREFERENCES,
+  loadPreferencesFromCookies,
+  savePreferencesToCookies,
+  SessionPreferences,
+} from "@/lib/cookies";
+import CookieBanner from "@/components/cookierequest";
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const [prefs, setPrefs] = useState<SessionPreferences>(DEFAULT_PREFERENCES);
+  const [isBannerVisible, setIsBannerVisible] = useState(false);
+  const [isNewQuestionModalOpen, setIsNewQuestionModalOpen] = useState(false);
+
+  // FAQ List loaded from template with dynamic likes
+  // const [faqs, setFaqs] = useState<FAQ[]>(INITIAL_FAQS);
+
+  // Search and Category states
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Base multi-select categories filter (Starts with 'All')
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([
+    "All",
+  ]);
+
+  // Database Submissions Live Display list for validating persistence
+  // const [submissions, setSubmissions] = useState<Submission[]>([]);
+  const [loadingSubmissions, setLoadingSubmissions] = useState(false);
+  const [showSubmissionsDrawer, setShowSubmissionsDrawer] = useState(true);
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
     null,
   );
@@ -53,11 +80,43 @@ export default function Home() {
     setTimeout(() => setSelectedServiceId(null), 800);
   };
 
+  // Hydration safety: run once on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const loadedPrefs = loadPreferencesFromCookies();
+      setPrefs(loadedPrefs);
+
+      // Show cookie consent banner if it wasn't accepted
+      if (!loadedPrefs.consentAccepted) {
+        setIsBannerVisible(true);
+      }
+      setMounted(true);
+      // fetchSubmissionsList();
+    }, 0);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Cookie accept handler
+  const handleCookieAccept = () => {
+    const updatedPrefs = { ...prefs, consentAccepted: true };
+    setPrefs(updatedPrefs);
+    savePreferencesToCookies(updatedPrefs);
+    setIsBannerVisible(false);
+  };
+
   return (
     <div className="w-full flex flex-col items-center justify-center bg-background ">
       <Logo_nav />
 
       <Navigation />
+
+      {/* Cookies Banner */}
+      <CookieBanner
+        isVisible={isBannerVisible}
+        onAccept={handleCookieAccept}
+        currentAccent={prefs.accentColor}
+      />
 
       <Homepage />
       <Problems />

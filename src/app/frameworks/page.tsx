@@ -59,14 +59,11 @@ export default function Frameworks() {
       <Navigation />
       <div id="frameworks-view" className="space-y-16  min-h-lvh max-w-400">
         {/* Header intro */}
-        <div className="border-4 border-black bg-white p-8 md:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] space-y-4 text-center rounded-3xl">
-          <div className="inline-block bg-[#2563EB] border-2 border-black text-white px-3.5 py-1 font-mono text-[10px] uppercase font-black tracking-widest leading-none rounded-lg">
-            INTELLECTUAL IP & FRAMEWORKS
-          </div>
-          <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-none text-black">
+        <div className="border-4 border-black bg-brand-card-comp-bg p-8 md:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] space-y-4 text-center rounded-3xl">
+          <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-none text-default-text">
             The Governed Frameworks behind Sustainable Growth
           </h1>
-          <p className="text-neutral-600 font-sans text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
+          <p className="text-accent-text font-sans text-xs md:text-sm max-w-2xl mx-auto leading-relaxed">
             Explore our proprietary intellectual systems that guarantee tactical
             consistency and structural scaling.
           </p>
@@ -74,15 +71,12 @@ export default function Frameworks() {
 
         {/* Framework 1: Growth Architecture component */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch pt-6">
-          <div className="lg:col-span-7 border-4 border-black bg-white p-6 md:p-8 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between rounded-3xl">
+          <div className="lg:col-span-7 border-4 border-black bg-brand-card-comp-bg p-6 md:p-8 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between rounded-3xl">
             <div className="space-y-6">
-              <div className="text-[#FB923C] font-mono text-xs font-black uppercase tracking-wider bg-orange-50 border border-orange-300 px-2 py-0.5 w-max rounded-md">
-                SYSTEMS BLUEPRINT 01
-              </div>
-              <h2 className="text-3xl font-mono uppercase font-black text-black">
+              <h2 className="text-3xl font-mono uppercase font-black text-default-text">
                 The GovLead Growth Architecture
               </h2>
-              <p className="text-neutral-700 text-xs md:text-sm leading-relaxed font-sans">
+              <p className="text-accent-text text-xs md:text-sm leading-relaxed font-sans">
                 Every operational entity depends on 5 interconnected subsystems.
                 Stagnation occurs when even one node operates in isolation:
               </p>
@@ -91,16 +85,16 @@ export default function Frameworks() {
                 {pillars.map((p, i) => (
                   <div
                     key={i}
-                    className="flex gap-4 items-start bg-neutral-50 p-3 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl"
+                    className="flex gap-4 items-start bg-brand-card-high-bg p-3 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl"
                   >
-                    <span className="font-mono font-black text-emerald-700 bg-white border border-black w-7 h-7 flex items-center justify-center shrink-0 rounded-lg">
+                    <span className="font-mono font-black text-default-text bg-brand-card-bg border border-brand-card-bg w-7 h-7 flex items-center justify-center shrink-0 rounded-lg">
                       {p.index}
                     </span>
                     <div className="space-y-0.5">
-                      <span className="font-mono text-xs uppercase font-extrabold text-black block">
+                      <span className="font-mono text-xs uppercase font-extrabold text-default-text block">
                         {p.title}
                       </span>
-                      <span className="text-[11px] text-neutral-600 block leading-relaxed">
+                      <span className="text-[11px] text-default-light-text block leading-relaxed">
                         {p.desc}
                       </span>
                     </div>

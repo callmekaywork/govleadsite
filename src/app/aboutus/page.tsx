@@ -11,12 +11,12 @@ export default function Aboutus() {
       <Navigation />
       <div id="about-view" className="space-y-16 md:space-y-24 max-w-400">
         {/* Header intro */}
-        <div className="border-4 border-black bg-white p-8 md:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] space-y-14 rounded-3xl">
-          <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-none text-black">
+        <div className="border-4 border-black bg-brand-card-comp-bg p-8 md:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] space-y-14 rounded-3xl">
+          <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-none text-default-text">
             Building Organisations That Grow With Clarity
           </h1>
           <div className="h-1 bg-black w-24"></div>
-          <p className="text-neutral-700 leading-relaxed font-sans text-base max-w-3xl pt-2">
+          <p className="text-accent-text leading-relaxed font-sans text-base max-w-3xl pt-2">
             GovLead Group was established to help organisations design the
             strategic systems required for sustainable growth. Our team believes
             that businesses grow most effectively when strategy, positioning,
@@ -28,12 +28,12 @@ export default function Aboutus() {
         {/* Origin & Philosophy Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Origin of GovLead */}
-          <div className="border-4 border-black bg-amber-50/35 p-8 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between space-y-6 rounded-2xl">
+          <div className="border-4 border-black bg-brand-card-high-bg p-8 shadow-[6px_6px_0px_0px_#000] flex flex-col justify-between space-y-6 rounded-2xl">
             <div className="space-y-4">
-              <h2 className="font-mono text-xl md:text-2xl font-black text-black tracking-wider uppercase border-b-2 border-black pb-4">
+              <h2 className="font-mono text-xl md:text-2xl font-black text-default-text tracking-wider uppercase border-b-2 border-black pb-4">
                 Why GovLead Was Created
               </h2>
-              <div className="text-neutral-700 font-sans text-sm leading-relaxed space-y-4 pt-2">
+              <div className="text-default-text font-sans text-sm leading-relaxed space-y-4 pt-2">
                 <p>
                   Before GovLead, we witnessed countless talented organizations
                   investing exorbitant operational hours into marketing
@@ -52,23 +52,23 @@ export default function Aboutus() {
                 </p>
               </div>
             </div>
-            <div className="text-xs uppercase font-mono tracking-widest text-[#1c1917]/60 font-bold bg-white border border-black p-3 text-center rounded-xl">
+            <div className="text-xs uppercase font-mono tracking-widest text-default-text font-bold bg-brand-card-comp-bg border border-black p-3 text-center rounded-xl">
               ESTABLISHED 2024 &bull; BUILT FOR SCALE
             </div>
           </div>
 
           {/* Philosophy aligned system components */}
-          <div className="border-4 border-black bg-white p-8 shadow-[6px_6px_0px_0px_#000] space-y-6 rounded-2xl">
-            <h2 className="font-mono text-xl md:text-2xl font-black text-black tracking-wider uppercase border-b-2 border-black pb-4">
+          <div className="border-4 border-black bg-brand-card-high-bg p-8 shadow-[6px_6px_0px_0px_#000] space-y-6 rounded-2xl">
+            <h2 className="font-mono text-xl md:text-2xl font-black text-default-text tracking-wider uppercase border-b-2 border-black pb-4">
               Growth Requires Alignment
             </h2>
-            <p className="text-neutral-700 font-sans text-sm leading-relaxed">
+            <p className="text-default-text font-sans text-sm leading-relaxed">
               Many organisations attempt to grow through isolated
               improvements—launching marketing campaigns without strategic
               clarity, or installing modern technology without alignment to
               business objectives.
             </p>
-            <p className="text-neutral-700 font-sans text-sm leading-relaxed">
+            <p className="text-default-text font-sans text-sm leading-relaxed">
               GovLead approaches growth differently. We believe sustainable
               expansion emerges when organizations align:
             </p>
@@ -84,7 +84,7 @@ export default function Aboutus() {
               ].map((val, idx) => (
                 <div
                   key={idx}
-                  className="bg-neutral-50 border-2 border-neutral-800 p-2 text-neutral-800 font-extrabold flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#1c1917] rounded-lg"
+                  className="bg-brand-card-acc-bg border-2 border-neutral-800 p-2 text-deafult-text font-extrabold flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#1c1917] rounded-lg"
                 >
                   <span className="w-1.5 h-1.5 bg-[#4ADE80] border border-black shrink-0 rounded-full"></span>
                   <span>{val}</span>
@@ -95,16 +95,16 @@ export default function Aboutus() {
         </div>
 
         {/* Core value: Contribution */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-4 border-black bg-emerald-50 p-8 shadow-[6px_6px_0px_0px_#000] rounded-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-4 border-black bg-brand-card-comp-bg p-8 shadow-[6px_6px_0px_0px_#000] rounded-2xl">
           <div className="md:col-span-4 space-y-2">
             <span className="font-mono text-[#10B981] text-xs font-black uppercase tracking-wider block">
               CENTRAL GUIDING METRIC
             </span>
-            <h2 className="text-3xl font-mono uppercase font-black text-black">
+            <h2 className="text-3xl font-mono uppercase font-black text-default-text">
               Contribution.
             </h2>
           </div>
-          <div className="md:col-span-8 text-neutral-700 font-sans text-sm leading-relaxed">
+          <div className="md:col-span-8 text-accent-text font-sans text-sm leading-relaxed">
             Contribution is the central value guiding GovLead. We measure
             success not only through completed project milestones, but through
             the strength, autonomy, and long-term capability of the
@@ -115,19 +115,16 @@ export default function Aboutus() {
         </div>
 
         {/* Vision of institutional firm */}
-        <div className="border-4 border-black bg-white p-8 shadow-[6px_6px_0px_0px_#000] text-center space-y-6 max-w-4xl mx-auto rounded-2xl">
-          <span className="inline-block bg-[#38BDF8] border-2 border-black text-black text-[11px] font-mono font-black uppercase px-3 py-1 shadow-[2px_2px_0px_0px_#005] rounded-lg">
-            LONG-TERM INSTITUTIONAL VISION
-          </span>
-          <h2 className="text-2xl md:text-3xl font-black text-black tracking-tight leading-tight uppercase font-mono">
+        <div className="border-4 border-black bg-brand-card-comp-bg p-8 shadow-[6px_6px_0px_0px_#000] text-center space-y-6 max-w-4xl mx-auto rounded-2xl">
+          <h2 className="text-2xl md:text-3xl font-black text-default-text tracking-tight leading-tight uppercase font-mono">
             Building an Institutional Firm
           </h2>
-          <p className="text-xs md:text-sm text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-default-text font-sans leading-relaxed max-w-2xl mx-auto">
             GovLead seeks to develop into an institution recognised for
             disciplined strategic thinking, structured growth system design,
             meaningful contribution, and long-term organisational development.
           </p>
-          <p className="text-xs md:text-sm text-neutral-600 font-sans leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs md:text-sm text-default-text font-sans leading-relaxed max-w-2xl mx-auto">
             We aim to contribute not only through high-integrity consulting
             engagements, but also through thought leadership, peer research, and
             strategic frameworks that help organisations understand growth more

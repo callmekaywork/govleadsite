@@ -75,14 +75,11 @@ export default function Insights() {
 
       <div id="insights-view" className="space-y-12 max-w-400 min-h-lvh">
         {/* Header intro */}
-        <div className="border-4 border-black bg-[#FAF5EF] p-8 md:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] space-y-4 rounded-3xl">
-          <span className="bg-orange-400 text-white border-2 border-black font-mono text-[10px] px-3.5 py-1 uppercase font-black w-max block shadow-[2px_2px_0px_0px_#000] rounded-lg">
-            RESEARCH & ANALYTICAL ARCHIVE
-          </span>
-          <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-none text-black">
+        <div className="border-4 border-black bg-brand-card-comp-bg p-8 md:p-12 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] space-y-4 rounded-3xl">
+          <h1 className="text-3xl md:text-5xl font-black tracking-tight leading-none text-default-text">
             Thought Leadership Database
           </h1>
-          <p className="text-xs md:text-sm text-neutral-700 max-w-2xl leading-relaxed font-sans">
+          <p className="text-xs md:text-sm text-accent-text max-w-2xl leading-relaxed font-sans">
             Explore strategic research, system insights, and frameworks
             regarding sustainable organization scaling in increasingly complex
             markets.
@@ -106,7 +103,7 @@ export default function Insights() {
               className={`border-2 border-black text-xs font-mono font-bold px-3 py-1 cursor-pointer transition-all rounded-lg ${
                 i === 0
                   ? "bg-black text-white"
-                  : "bg-white text-black hover:bg-neutral-100"
+                  : "bg-brand-card-acc-bg text-default-text hover:bg-neutral-100"
               }`}
             >
               {cat}
@@ -119,19 +116,19 @@ export default function Insights() {
           {articles.map((art) => (
             <div
               key={art.id}
-              className="border-4 border-black bg-white p-6 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between rounded-2xl"
+              className="border-4 border-black bg-brand-card-comp-bg p-6 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between rounded-2xl"
             >
               <div className="space-y-3">
-                <div className="flex justify-between items-center text-[10px] font-mono font-black text-[#FB923C] uppercase">
+                <div className="flex justify-between items-center text-[10px] font-mono font-black text-brand-accent uppercase">
                   <span>{art.category}</span>
-                  <span className="text-neutral-400">{art.date}</span>
+                  <span className="text-default-text">{art.date}</span>
                 </div>
 
-                <h3 className="font-mono text-sm md:text-base font-extrabold uppercase leading-snug line-clamp-2 text-black pt-1">
+                <h3 className="font-mono text-sm md:text-base font-extrabold uppercase leading-snug line-clamp-2 text-default-text pt-1">
                   {art.title}
                 </h3>
 
-                <p className="text-xs text-neutral-600 leading-relaxed font-sans line-clamp-3">
+                <p className="text-xs text-accent-text leading-relaxed font-sans line-clamp-3">
                   {art.summary}
                 </p>
               </div>
@@ -158,7 +155,7 @@ export default function Insights() {
             if (!art) return null;
             return (
               <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
-                <div className="bg-white border-4 border-black w-full max-w-2xl p-6 md:p-8 space-y-6 relative max-h-[85vh] overflow-y-auto shadow-[8px_8px_0px_0px_#000] rounded-3xl">
+                <div className="bg-brand-card-high-bg border-4 border-black w-full max-w-2xl p-6 md:p-8 space-y-6 relative max-h-[85vh] overflow-y-auto shadow-[8px_8px_0px_0px_#000] rounded-3xl">
                   <button
                     onClick={() => setSelectedArticleId(null)}
                     className="absolute top-4 right-4 bg-rose-400 hover:bg-rose-500 text-black border-2 border-black p-1 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer rounded-lg"
@@ -184,11 +181,11 @@ export default function Insights() {
                       ))}
                   </div>
 
-                  <div className="border-t pt-4 bg-stone-50 p-4 border-l-4 border-stone-800 rounded-r-xl">
+                  <div className="border-t pt-4 bg-brand-card-bg p-4 border-l-4 border-brand-card-bg rounded-r-xl">
                     <div className="text-[11px] font-mono font-black uppercase">
                       Author Credentials:
                     </div>
-                    <div className="text-xs text-neutral-600 font-sans">
+                    <div className="text-xs text-accent-text font-sans">
                       {art.author} &bull; GovLead Strategic Policy Committee
                     </div>
                   </div>
