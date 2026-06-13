@@ -9,7 +9,7 @@ import Strategiclens from "@/components/strategiclens";
 import { WhatWeDo } from "@/components/whatwedo";
 import { AnimatePresence, motion } from "motion/react";
 import { Explainwhatwedo } from "@/components/explain-whatwedo";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ServicePillars } from "@/components/servicepillars";
 import { AboutDiff } from "@/components/aboutdiffs";
 import { IdealClient } from "@/components/idealclient";
@@ -34,6 +34,9 @@ import {
   SessionPreferences,
 } from "@/lib/cookies";
 import CookieBanner from "@/components/cookierequest";
+import FAQCard from "@/components/FAQcard";
+import { BookOpen } from "lucide-react";
+import { FAQ, INITIAL_FAQS } from "@/lib/faqdata";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -42,7 +45,7 @@ export default function Home() {
   const [isNewQuestionModalOpen, setIsNewQuestionModalOpen] = useState(false);
 
   // FAQ List loaded from template with dynamic likes
-  // const [faqs, setFaqs] = useState<FAQ[]>(INITIAL_FAQS);
+  const [faqs, setFaqs] = useState<FAQ[]>(INITIAL_FAQS);
 
   // Search and Category states
   const [searchQuery, setSearchQuery] = useState("");
@@ -105,6 +108,37 @@ export default function Home() {
     setIsBannerVisible(false);
   };
 
+  // "Most Asked" popular guides extracted
+  const mostAskedFAQs = useMemo(() => {
+    return faqs
+      .filter((faq) => faq.isPopular || faq.likes >= 75)
+      .sort((a, b) => b.likes - a.likes);
+  }, [faqs]);
+
+  // Toggle liking FAQ
+  const handleLikeFAQ = (id: string) => {
+    const alreadyLiked = prefs.likedFaqs.includes(id);
+    let updatedLikes: string[];
+
+    if (alreadyLiked) {
+      updatedLikes = prefs.likedFaqs.filter((item) => item !== id);
+    } else {
+      updatedLikes = [...prefs.likedFaqs, id];
+    }
+
+    const updatedPrefs = { ...prefs, likedFaqs: updatedLikes };
+    setPrefs(updatedPrefs);
+    savePreferencesToCookies(updatedPrefs);
+  };
+
+  if (!mounted) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-brand-card-high-bg p-6 text-center">
+        <div className="animate-spin border-4 border-black h-12 w-12 border-t-transparent rounded-full" />
+      </div>
+    );
+  }
+
   return (
     <div className="w-full flex flex-col items-center justify-center bg-background ">
       <Logo_nav />
@@ -126,6 +160,27 @@ export default function Home() {
       <Operationalmethodology />
       <Homeinsights />
       <Consultations />
+      {/* Section: Most Asked Questions Deck */}
+      <div className="space-y-15 px-10 max-w-400 mt-20">
+        <h2 className="font-space font-black text-2xl md:text-6xl uppercase tracking-tight flex items-center gap-2 text-default-text">
+          <BookOpen className="h-5 w-5 stroke-[2.5]" />
+          Frequently asked questions
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 py-2">
+          {mostAskedFAQs.slice(0, 4).map((faq) => (
+            <FAQCard
+              key={faq.id}
+              faq={faq}
+              isFeatured={true}
+              isLiked={prefs.likedFaqs.includes(faq.id)}
+              onLikeToggle={handleLikeFAQ}
+              accentBg="bg-[#00D1FF]"
+              accentHex="#00D1FF"
+            />
+          ))}
+        </div>
+      </div>
       {/* <Corecapabilities />
       <StrategicPlacement />
       <Casestudies /> */}
